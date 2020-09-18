@@ -14,10 +14,7 @@ body{
     display: flex;
     justify-content: center;
 }
-.your-life-outer{
-    z-index: 1;
-    background: black;
-}
+
 .your-life{
     z-index: 10;
     height: 744px;

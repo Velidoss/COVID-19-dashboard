@@ -18,7 +18,7 @@ body{
 .your-life{
     z-index: 10;
     height: 744px;
-    background: url("./assets/bg-image.png") no-repeat 50% 50% ;
+    background: url("assets/bg-image.png") no-repeat 50% 50% ;
 }
 .your-life::before{
     content: '';

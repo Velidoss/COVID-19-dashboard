@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe05b8fb-940c-47b4-8183-1d7861e54c9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="webdev" />
+        <entry key="$PROJECT_DIR$" value="gh-pages" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -89,5 +90,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="686" y="215" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600448807264" />
+    <state x="183" y="85" key="MergeDialog" timestamp="1600884297208">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="183" y="85" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600884297208" />
+    <state x="706" y="60" key="git4idea.branch.GitSmartOperationDialog" timestamp="1600884293955">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="706" y="60" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600884293955" />
   </component>
 </project>

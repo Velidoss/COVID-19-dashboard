@@ -1,0 +1,7 @@
+@import '../../common';
+
+.map{
+  @include blockStyling();
+  width: 100%;
+  height: 60vh ;
+}

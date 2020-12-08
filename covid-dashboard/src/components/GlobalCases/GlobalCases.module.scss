@@ -1,0 +1,14 @@
+@import "../../common";
+
+.GlobalCases{
+  @include flexCenter(column);
+  @include blockStyling();
+  width: 100%;
+  margin-bottom: 20px;
+  &__text{
+    @include fontLight(18px)
+  }
+  &__number{
+    @include fontInjured(24px)
+  }
+}

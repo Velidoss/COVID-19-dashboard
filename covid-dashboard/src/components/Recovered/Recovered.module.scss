@@ -1,0 +1,31 @@
+@import '../../common';
+
+.recovered{
+  @include blockStyling();
+  &__title{
+    @include flexCenter(column);
+    &_top{
+      @include fontLight(18px);
+    }
+    &_bot{
+      @include fontLight(22px);
+    }
+
+  }
+  &__list{
+    @include flexCenter(column);
+    &_item{
+      border-bottom: 1px solid $colorUnderline;
+      &_loss{
+        @include fontInjured(18px);
+        margin-right: 20px;
+      }
+      &_recovered{
+        @include fontRecovered(18px);
+      }
+      &_city{
+        @include fontLight(18px);
+      }
+    }
+  }
+}

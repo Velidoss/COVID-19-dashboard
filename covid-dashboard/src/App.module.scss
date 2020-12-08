@@ -1,0 +1,38 @@
+@import "common";
+
+body{
+  background: $colorBg;
+}
+.App{
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 20px;
+
+}
+.mainContainer{
+  @include flexRow();
+  width: 100%;
+}
+.appPanelLeft{
+  @include flexCenter(column);
+  width: 20%;
+}
+
+.mapContainer{
+  @include flexCenter(column);
+  width: 50%;
+  margin: 0 40px;
+}
+
+.appPanelRight{
+  @include flexCenter(column);
+  width: 20%;
+  &__top{
+    @include flexCenter(row);
+    width: 100%;
+  }
+  &__bot{
+    @include flexCenter(row);
+  }
+}
+

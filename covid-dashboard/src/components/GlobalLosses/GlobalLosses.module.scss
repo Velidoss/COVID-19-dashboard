@@ -1,0 +1,28 @@
+@import "../../common";
+
+.losses{
+  @include blockStyling();
+  &__stat{
+    @include flexCenter(column);
+    &_name{
+      @include fontLight(18px);
+    }
+    &_number{
+      @include fontInjured(22px);
+    }
+
+  }
+  &__list{
+    @include flexCenter(column);
+    &_item{
+      border-bottom: 1px solid $colorUnderline;
+      &_name{
+        @include fontLight(18px);
+        margin-right: 20px;
+      }
+      &_number{
+        @include fontInjured(18px);
+      }
+    }
+  }
+}

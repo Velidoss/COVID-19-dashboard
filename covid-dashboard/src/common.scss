@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+$colorBg : #BDFFFD;
+$colorBlock : #9FFFF5;
+$colorTinyText : #5E6973;
+$colorInjured : #8e3f56;
+$colorRecovered : #0e5e2a;
+$colorUnderline : #6ABEA7;
+
+@mixin fontLight($size) {
+  font-family: 'Nunito', sans-serif;
+  font-size: $size;
+  color: $colorTinyText;
+  font-weight: 300;
+}
+
+@mixin fontInjured($size){
+  font-family: 'Nunito', sans-serif;
+  font-size: $size;
+  color: $colorInjured;
+  font-weight: 700;
+}
+
+@mixin fontRecovered($size){
+  font-family: 'Nunito', sans-serif;
+  font-size: $size;
+  color: $colorRecovered;
+  font-weight: 700;
+}
+
+@mixin flexCenter($direction){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexRow(){
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin blockStyling {
+  background-color: $colorBlock;
+  border-radius: 20px;
+  padding: 10px;
+}

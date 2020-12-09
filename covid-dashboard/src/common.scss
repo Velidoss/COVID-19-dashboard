@@ -35,6 +35,13 @@ $colorUnderline : #6ABEA7;
   align-items: center;
 }
 
+@mixin flexCustom($direction, $justify:center, $align:center){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 @mixin flexRow(){
   display: flex;
   flex-direction: row;

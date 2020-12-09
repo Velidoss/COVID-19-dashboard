@@ -4,8 +4,9 @@
   width: 100%;
   background: $colorBlock;
   border-radius: 20px;
-  line-height: 50px;
+  height: 9vh;
   text-align: center;
+  @include flexCenter(row);
   &Text{
     @include fontLight(26px);
   }

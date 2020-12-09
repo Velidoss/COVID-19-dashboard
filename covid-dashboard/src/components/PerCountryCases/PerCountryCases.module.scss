@@ -4,6 +4,7 @@
   @include flexCenter(column);
   @include blockStyling();
   width: 100%;
+  height: calc(100% - 20vh - 40px );
   &__title{
     @include fontLight(18px);
   }

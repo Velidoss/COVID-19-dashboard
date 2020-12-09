@@ -5,6 +5,7 @@
   @include blockStyling();
   width: 100%;
   margin-bottom: 20px;
+  height: 20vh;
   &__text{
     @include fontLight(18px)
   }

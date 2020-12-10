@@ -4,6 +4,7 @@
   @include blockStyling();
   width: 100%;
   height: 100%;
+  overflow: scroll;
   &__stat{
     @include flexCenter(column);
     &_name{
@@ -15,9 +16,10 @@
 
   }
   &__list{
-    @include flexCenter(column);
+    @include flexCustom(column, space-between, start);
     &_item{
       border-bottom: 1px solid $colorUnderline;
+      width: 100%;
       &_name{
         @include fontLight(18px);
         margin-right: 20px;

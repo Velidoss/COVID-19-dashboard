@@ -1,10 +1,11 @@
 @import "../../common";
 
 .cases{
-  @include flexCenter(column);
+  @include flexCustom(column, start);
   @include blockStyling();
   width: 100%;
   height: calc(100% - 20vh - 40px );
+  overflow: scroll;
   &__title{
     @include fontLight(18px);
   }

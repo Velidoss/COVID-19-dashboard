@@ -1,23 +1,42 @@
 import React, { useReducer } from 'react';
-import { GET_GLOBAL_INFO } from './actionTypes';
+import PropTypes from 'prop-types';
+import { GET_GLOBAL_INFO, SET_COUNTRY_TO_OBSERVE } from './actionTypes';
 import GlobalReducer from './GlobalReducer';
 import api from '../api/api';
 import GlobalContext from './GlobalContext';
 
-// eslint-disable-next-line react/prop-types
 const GlobalState = ({ children }) => {
-  const [state, dispatch] = useReducer(GlobalReducer, { globalInfo: {} });
+  const [state, dispatch] = useReducer(GlobalReducer, { globalInfo: {}, country: '' });
 
   const getGlobalState = async () => {
-    const data = api('summary');
+    const data = await api('summary');
     dispatch({
       type: GET_GLOBAL_INFO,
-      globalInfo: data,
+      payload: data,
     });
   };
 
+  const setCountryToObserve = (newCountry) => {
+    dispatch({
+      type: SET_COUNTRY_TO_OBSERVE,
+      payload: newCountry,
+    });
+  };
+
+  GlobalState.propTypes = {
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node,
+    ]).isRequired,
+  };
+
   return (
-    <GlobalContext.Provider value={{ getGlobalState, state }}>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={{
+      getGlobalState, setCountryToObserve, state,
+    }}
+    >
+      {children}
+    </GlobalContext.Provider>
   );
 };
 

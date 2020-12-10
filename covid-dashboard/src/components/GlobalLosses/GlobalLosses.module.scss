@@ -16,10 +16,12 @@
 
   }
   &__list{
-    @include flexCustom(column, space-between, start);
+    @include flexCustom(column, space-between, flex-start);
     &_item{
-      border-bottom: 1px solid $colorUnderline;
       width: 100%;
+      @include hoverElement();
+      margin: 5px 10px;
+      padding: 5px 0;
       &_name{
         @include fontLight(18px);
         margin-right: 20px;

@@ -1,4 +1,5 @@
-import React, { useReducer, useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import GlobalContext from './store/GlobalContext';
 import style from './App.module.scss';
 import Title from './components/Title/Title';
 import GlobalCases from './components/GlobalCases/GlobalCases';
@@ -7,22 +8,10 @@ import Map from './components/Map/Map';
 import GlobalLosses from './components/GlobalLosses/GlobalLosses';
 import Recovered from './components/Recovered/Recovered';
 import Diagram from './components/Diagram/Diagram';
-import GlobalReducer from './store/GlobalReducer';
-import api from './api/api';
-import { GET_GLOBAL_INFO } from './store/actionTypes';
 
 function App() {
-  const [state, dispatch] = useReducer(GlobalReducer, { globalInfo: {}, country: '' });
-  const [info, setInfo] = useState({});
-  console.log(info, setInfo);
-  const getGlobalState = async () => {
-    const data = await api('summary');
-    dispatch({
-      type: GET_GLOBAL_INFO,
-      payload: data,
-    });
-  };
-
+  const { state, getGlobalState, setCountryToObserve } = useContext(GlobalContext);
+  console.log(state);
   useEffect(() => {
     getGlobalState();
   }, []);
@@ -42,7 +31,12 @@ function App() {
           }
           {
             state.globalInfo.Global
-              ? <PerCountryCases countries={state.globalInfo.Countries} />
+              ? (
+                <PerCountryCases
+                  setCountryToObserve={setCountryToObserve}
+                  countries={state.globalInfo.Countries}
+                />
+              )
               : null
           }
         </div>
@@ -57,6 +51,7 @@ function App() {
                   <GlobalLosses
                     losses={state.globalInfo.Global.TotalDeaths}
                     countries={state.globalInfo.Countries}
+                    setCountryToObserve={setCountryToObserve}
                   />
                 )
                 : null

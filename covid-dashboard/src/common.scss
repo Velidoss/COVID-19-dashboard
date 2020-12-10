@@ -48,6 +48,15 @@ $colorUnderline : #6ABEA7;
   align-items: center;
 }
 
+@mixin hoverElement(){
+  border-bottom: 1px solid $colorUnderline;
+  transition: .3s ease-in-out;
+  &:hover{
+    cursor: pointer;
+    background-color: $colorUnderline;
+  }
+}
+
 @mixin blockStyling {
   background-color: $colorBlock;
   border-radius: 20px;

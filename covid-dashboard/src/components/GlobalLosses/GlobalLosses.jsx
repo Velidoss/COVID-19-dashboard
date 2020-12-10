@@ -33,11 +33,10 @@ const GlobalLosses = ({ losses, countries }) => (
 
 GlobalLosses.propTypes = {
   losses: PropTypes.number.isRequired,
-  // eslint-disable-next-line react/require-default-props
-  countries: PropTypes.arrayOf(PropTypes.shape([{
+  countries: PropTypes.arrayOf(PropTypes.shape({
     TotalConfirmed: PropTypes.number.isRequired,
     Country: PropTypes.string.isRequired,
-  }])),
+  })).isRequired,
 };
 
 export default GlobalLosses;

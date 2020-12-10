@@ -12,7 +12,7 @@ import api from './api/api';
 import { GET_GLOBAL_INFO } from './store/actionTypes';
 
 function App() {
-  const [state, dispatch] = useReducer(GlobalReducer, { globalInfo: {} });
+  const [state, dispatch] = useReducer(GlobalReducer, { globalInfo: {}, country: '' });
   const [info, setInfo] = useState({});
   console.log(info, setInfo);
   const getGlobalState = async () => {

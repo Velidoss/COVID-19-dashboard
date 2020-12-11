@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './GlobalLosses.module.scss';
 
-// eslint-disable-next-line react/prop-types
-const GlobalLosses = ({ losses, countries, setCountryToObserve }) => (
+const GlobalLosses = ({
+  // eslint-disable-next-line no-unused-vars
+  losses, countries, countryName, setCountryToObserve, unsetCountryToObserve,
+}) => (
   <div className={style.losses}>
     <div className={style.losses__stat}>
-      <span className={style.losses__stat_name}>Global deaths:</span>
+      <span className={style.losses__stat_name}>{countryName ? `Deaths in ${countryName}` : 'Global deaths:'}</span>
       <span className={style.losses__stat_number}>{losses}</span>
     </div>
     <div className={style.losses__list}>
@@ -40,11 +42,14 @@ const GlobalLosses = ({ losses, countries, setCountryToObserve }) => (
 
 GlobalLosses.propTypes = {
   losses: PropTypes.number.isRequired,
+  countryName: PropTypes.string.isRequired,
   countries: PropTypes.arrayOf(PropTypes.shape({
     TotalConfirmed: PropTypes.number.isRequired,
     Country: PropTypes.string.isRequired,
     Slug: PropTypes.string.isRequired,
   })).isRequired,
+  setCountryToObserve: PropTypes.func.isRequired,
+  unsetCountryToObserve: PropTypes.func.isRequired,
 };
 
 export default GlobalLosses;

@@ -10,7 +10,9 @@ import Recovered from './components/Recovered/Recovered';
 import Diagram from './components/Diagram/Diagram';
 
 function App() {
-  const { state, getGlobalState, setCountryToObserve } = useContext(GlobalContext);
+  const {
+    state, getGlobalState, setCountryToObserve, unsetCountryToObserve,
+  } = useContext(GlobalContext);
   console.log(state);
   useEffect(() => {
     getGlobalState();
@@ -25,16 +27,17 @@ function App() {
       <main className={style.mainContainer}>
         <div className={style.appPanelLeft}>
           {
-            state.globalInfo.Global
-              ? <GlobalCases cases={state.globalInfo.Global.TotalConfirmed} />
+            state.countryInfo.TotalConfirmed
+              ? <GlobalCases cases={state.countryInfo.TotalConfirmed} countryName={state.countryInfo.Country ? state.countryInfo.Country : ''} />
               : null
           }
           {
-            state.globalInfo.Global
+            state.countries
               ? (
                 <PerCountryCases
                   setCountryToObserve={setCountryToObserve}
-                  countries={state.globalInfo.Countries}
+                  unsetCountryToObserve={unsetCountryToObserve}
+                  countries={state.countries}
                 />
               )
               : null
@@ -46,12 +49,14 @@ function App() {
         <div className={style.appPanelRight}>
           <div className={style.appPanelRight__top}>
             {
-              state.globalInfo.Global
+              state.countryInfo.TotalDeaths && state.countries
                 ? (
                   <GlobalLosses
-                    losses={state.globalInfo.Global.TotalDeaths}
-                    countries={state.globalInfo.Countries}
+                    losses={state.countryInfo.TotalDeaths}
+                    countries={state.countries}
+                    countryName={state.countryInfo.Country ? state.countryInfo.Country : ''}
                     setCountryToObserve={setCountryToObserve}
+                    unsetCountryToObserve={unsetCountryToObserve}
                   />
                 )
                 : null

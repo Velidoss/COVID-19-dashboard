@@ -1,12 +1,17 @@
 import React, { useReducer } from 'react';
 import PropTypes from 'prop-types';
-import { GET_GLOBAL_INFO, SET_COUNTRY_TO_OBSERVE } from './actionTypes';
+import { GET_GLOBAL_INFO, SET_COUNTRY_TO_OBSERVE, UNSET_COUNTRY_TO_OBSERVE } from './actionTypes';
 import GlobalReducer from './GlobalReducer';
 import api from '../api/api';
 import GlobalContext from './GlobalContext';
 
 const GlobalState = ({ children }) => {
-  const [state, dispatch] = useReducer(GlobalReducer, { globalInfo: {}, country: '' });
+  const [state, dispatch] = useReducer(GlobalReducer, {
+    global: {},
+    countries: [],
+    selectedCountrySlug: '',
+    countryInfo: {},
+  });
 
   const getGlobalState = async () => {
     const data = await api('summary');
@@ -16,10 +21,15 @@ const GlobalState = ({ children }) => {
     });
   };
 
-  const setCountryToObserve = (newCountry) => {
+  const setCountryToObserve = (newCountrySlug) => {
     dispatch({
       type: SET_COUNTRY_TO_OBSERVE,
-      payload: newCountry,
+      payload: newCountrySlug,
+    });
+  };
+  const unsetCountryToObserve = () => {
+    dispatch({
+      type: UNSET_COUNTRY_TO_OBSERVE,
     });
   };
 
@@ -32,7 +42,7 @@ const GlobalState = ({ children }) => {
 
   return (
     <GlobalContext.Provider value={{
-      getGlobalState, setCountryToObserve, state,
+      getGlobalState, setCountryToObserve, unsetCountryToObserve, state,
     }}
     >
       {children}

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './PerCountryCases.module.scss';
+import Country from './Country';
 
-// eslint-disable-next-line react/prop-types
-const PerCountryCases = ({ countries, setCountryToObserve }) => (
+// eslint-disable-next-line no-unused-vars
+const PerCountryCases = ({ countries, setCountryToObserve, unsetCountryToObserve }) => (
   <div className={style.cases}>
     <p className={style.cases__title}>Cases by Country / region/ sovereignty</p>
     <div className={style.cases__list}>
@@ -11,16 +12,11 @@ const PerCountryCases = ({ countries, setCountryToObserve }) => (
         countries.length > 0
           ? countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed)
             .map((country) => (
-              // eslint-disable-next-line max-len
-              // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-              <div
-                className={style.cases__list_item}
-                id={country.Slug}
-                onClick={() => setCountryToObserve(country.Slug)}
-              >
-                <span className={style.cases__list_item_injured}>{country.TotalConfirmed}</span>
-                <span className={style.cases__list_item_country}>{country.Country}</span>
-              </div>
+              <Country
+                country={country}
+                setCountryToObserve={setCountryToObserve}
+                unsetCountryToObserve={unsetCountryToObserve}
+              />
             ))
           : (
             <div className={style.cases__list_item}>
@@ -38,6 +34,8 @@ PerCountryCases.propTypes = {
     Country: PropTypes.string.isRequired,
     Slug: PropTypes.string.isRequired,
   })).isRequired,
+  setCountryToObserve: PropTypes.func.isRequired,
+  unsetCountryToObserve: PropTypes.func.isRequired,
 };
 
 export default PerCountryCases;

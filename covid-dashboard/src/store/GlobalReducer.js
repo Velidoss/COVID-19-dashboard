@@ -1,4 +1,9 @@
-import { GET_GLOBAL_INFO, SET_COUNTRY_TO_OBSERVE, UNSET_COUNTRY_TO_OBSERVE } from './actionTypes';
+import {
+  GET_GLOBAL_INFO,
+  SET_COUNTRY_TO_OBSERVE,
+  UNSET_COUNTRY_TO_OBSERVE,
+  SET_COUNTRY_REGIONS_INFO,
+} from './actionTypes';
 
 const GlobalReducer = (state, action) => {
   switch (action.type) {
@@ -24,6 +29,11 @@ const GlobalReducer = (state, action) => {
         ...state,
         selectedCountrySlug: '',
         countryInfo: state.global,
+      };
+    case SET_COUNTRY_REGIONS_INFO:
+      return {
+        ...state,
+        countryRegions: action.payload,
       };
     default:
       return state;

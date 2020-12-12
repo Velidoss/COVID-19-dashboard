@@ -11,12 +11,15 @@ import Diagram from './components/Diagram/Diagram';
 
 function App() {
   const {
-    state, getGlobalState, setCountryToObserve, unsetCountryToObserve,
+    state, getGlobalState, setCountryToObserve, unsetCountryToObserve, getCountryRegionsInfo,
   } = useContext(GlobalContext);
   console.log(state);
   useEffect(() => {
     getGlobalState();
   }, []);
+  useEffect(() => {
+    getCountryRegionsInfo(state.countryInfo.Slug);
+  }, [state.countryInfo]);
 
   return (
     <div className={style.App}>

@@ -1,4 +1,4 @@
-@import "../../common";
+@import "../../common/common";
 
 .GlobalCases{
   @include flexCenter(column);
@@ -12,4 +12,8 @@
   &__number{
     @include fontInjured(24px)
   }
+}
+
+.stretchButton{
+  @include stretchBtn();
 }

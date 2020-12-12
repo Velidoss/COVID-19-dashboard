@@ -57,8 +57,31 @@ $colorUnderline : #6ABEA7;
   }
 }
 
-@mixin blockStyling {
+@mixin blockStyling() {
   background-color: $colorBlock;
   border-radius: 20px;
   padding: 10px;
+  position: relative;
 }
+
+@mixin stretchBtn() {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border-radius: 50%;
+  border: none;
+  transition: 0.3s ease-in-out;
+  @include flexCenter(row);
+  img{
+    width: 14px;
+    height: 14px;
+  }
+  &:hover{
+    cursor: pointer;
+    background: grey;
+  }
+}
+

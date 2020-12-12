@@ -1,5 +1,4 @@
-const api = async (path) => {
-  const url = `https://api.covid19api.com/${path}`;
+const api = async (url) => {
   const request = await fetch(url);
   return request.json();
 };

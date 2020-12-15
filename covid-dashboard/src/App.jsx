@@ -13,10 +13,11 @@ function App() {
   const {
     state, getGlobalState, setCountryToObserve, unsetCountryToObserve, getCountryRegionsInfo,
   } = useContext(GlobalContext);
-  console.log(state);
+
   useEffect(() => {
     getGlobalState();
   }, []);
+
   useEffect(() => {
     getCountryRegionsInfo(state.countryInfo.Slug);
   }, [state.countryInfo]);

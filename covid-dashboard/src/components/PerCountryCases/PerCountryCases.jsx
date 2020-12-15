@@ -16,6 +16,7 @@ const PerCountryCases = ({ countries, setCountryToObserve, unsetCountryToObserve
                 country={country}
                 setCountryToObserve={setCountryToObserve}
                 unsetCountryToObserve={unsetCountryToObserve}
+                key={country.Slug}
               />
             ))
           : (

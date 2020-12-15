@@ -20,7 +20,7 @@ const GlobalLosses = ({
               // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
               <div
                 className={style.losses__list_item}
-                id={country.Slug}
+                key={country.Slug}
                 onClick={() => setCountryToObserve(country.Slug)}
               >
                 <span className={style.losses__list_item_name}>{country.Country}</span>

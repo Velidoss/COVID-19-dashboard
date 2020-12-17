@@ -1,5 +1,6 @@
 import {
   GET_GLOBAL_INFO,
+  GET_COUNTRIES_INFO,
   SET_COUNTRY_TO_OBSERVE,
   UNSET_COUNTRY_TO_OBSERVE,
   SET_COUNTRY_REGIONS_INFO,
@@ -10,25 +11,30 @@ const GlobalReducer = (state, action) => {
     case GET_GLOBAL_INFO:
       return {
         ...state,
-        global: action.payload.Global,
-        countries: action.payload.Countries,
-        countryInfo: state.selectedCountrySlug
-          ? action.payload.Countries
-            .filter((country) => country.Slug === state.selectedCountrySlug)
-          : action.payload.Global,
+        global: action.payload,
+      };
+    case GET_COUNTRIES_INFO:
+      return {
+        ...state,
+        countries: action.payload.filter((country) => country.countryInfo._id !== null),
+        selectedCountryInfo: state.selectedCountryId !== -1
+          ? action.payload
+            .filter((country) => country.countryInfo._id === state.selectedCountryId)
+          : state.global,
       };
     case SET_COUNTRY_TO_OBSERVE:
       return {
         ...state,
-        selectedCountrySlug: action.payload,
-        countryInfo: action.payload
-          ? state.countries.filter((country) => country.Slug === action.payload)[0] : global,
+        selectedCountryId: action.payload,
+        selectedCountryInfo: action.payload
+          ? state.countries
+            .filter((country) => country.countryInfo._id === action.payload)[0] : global,
       };
     case UNSET_COUNTRY_TO_OBSERVE:
       return {
         ...state,
-        selectedCountrySlug: '',
-        countryInfo: state.global,
+        selectedCountryId: -1,
+        selectedCountryInfo: state.global,
       };
     case SET_COUNTRY_REGIONS_INFO:
       return {

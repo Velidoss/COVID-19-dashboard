@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import GlobalContext from './store/GlobalContext';
 import style from './App.module.scss';
-import Title from './components/Title/Title';
+import Header from './components/Header/Header';
 import GlobalCases from './components/GlobalCases/GlobalCases';
 import PerCountryCases from './components/PerCountryCases/PerCountryCases';
 import Map from './components/Map/Map';
@@ -11,28 +11,39 @@ import Diagram from './components/Diagram/Diagram';
 
 function App() {
   const {
-    state, getGlobalState, setCountryToObserve, unsetCountryToObserve, getCountryRegionsInfo,
+    state,
+    getGlobalState,
+    getPerCountryState,
+    setCountryToObserve,
+    unsetCountryToObserve,
+    // getCountryRegionsInfo,
   } = useContext(GlobalContext);
 
   useEffect(() => {
     getGlobalState();
+    getPerCountryState();
   }, []);
 
-  useEffect(() => {
-    getCountryRegionsInfo(state.countryInfo.Slug);
-  }, [state.countryInfo]);
-
+  // useEffect(() => {
+  //   getCountryRegionsInfo(state.selectedCountryInfo.Slug);
+  // }, [state.selectedCountryInfo]);
+  console.log(state);
   return (
     <div className={style.App}>
-      <Title />
+      <Header />
       <div>
         {}
       </div>
       <main className={style.mainContainer}>
         <div className={style.appPanelLeft}>
           {
-            state.countryInfo.TotalConfirmed
-              ? <GlobalCases cases={state.countryInfo.TotalConfirmed} countryName={state.countryInfo.Country ? state.countryInfo.Country : ''} />
+            state.selectedCountryInfo.cases
+              ? (
+                <GlobalCases
+                  cases={state.selectedCountryInfo.cases}
+                  countryName={state.selectedCountryInfo.country ? state.selectedCountryInfo.country : ''}
+                />
+              )
               : null
           }
           {
@@ -42,6 +53,7 @@ function App() {
                   setCountryToObserve={setCountryToObserve}
                   unsetCountryToObserve={unsetCountryToObserve}
                   countries={state.countries}
+                  selectedCountryId={state.selectedCountryId}
                 />
               )
               : null
@@ -53,14 +65,15 @@ function App() {
         <div className={style.appPanelRight}>
           <div className={style.appPanelRight__top}>
             {
-              state.countryInfo.TotalDeaths && state.countries
+              state.selectedCountryInfo.deaths && state.countries
                 ? (
                   <GlobalLosses
-                    losses={state.countryInfo.TotalDeaths}
+                    losses={state.selectedCountryInfo.deaths}
                     countries={state.countries}
-                    countryName={state.countryInfo.Country ? state.countryInfo.Country : ''}
+                    countryName={state.selectedCountryInfo.country ? state.selectedCountryInfo.country : ''}
                     setCountryToObserve={setCountryToObserve}
                     unsetCountryToObserve={unsetCountryToObserve}
+                    selectedCountryId={state.selectedCountryId}
                   />
                 )
                 : null

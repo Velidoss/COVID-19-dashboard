@@ -5,7 +5,7 @@ body{
 }
 .App{
   margin: 0 auto;
-  width: 97vw;
+  width: calc(100% - 40px);
   min-height: 100vh;
   padding: 0 20px;
 }
@@ -14,6 +14,7 @@ body{
   @include flexRow();
   width: 100%;
   height: calc(91vh - 20px);
+  position: relative;
 }
 .appPanelLeft{
   @include flexCenter(column);

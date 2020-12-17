@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './GlobalLosses.module.scss';
+import CountryWithLosses from './CountryWithLosses';
 
 const GlobalLosses = ({
   // eslint-disable-next-line no-unused-vars
-  losses, countries, countryName, setCountryToObserve, unsetCountryToObserve,
+  losses, countries, countryName, setCountryToObserve, unsetCountryToObserve, selectedCountryId,
 }) => (
   <div className={style.losses}>
     <div className={style.losses__stat}>
@@ -18,17 +19,13 @@ const GlobalLosses = ({
             .map((country) => (
               // eslint-disable-next-line max-len
               // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-              <div
-                className={style.losses__list_item}
-                key={country.Slug}
-                onClick={() => setCountryToObserve(country.Slug)}
-              >
-                <span className={style.losses__list_item_name}>{country.Country}</span>
-                <span className={style.losses__list_item_number}>
-                  {`${country.TotalDeaths} `}
-                  deaths
-                </span>
-              </div>
+              <CountryWithLosses
+                country={country}
+                setCountryToObserve={setCountryToObserve}
+                unsetCountryToObserve={unsetCountryToObserve}
+                selectedCountryId={selectedCountryId}
+                key={country.countryInfo._id}
+              />
             ))
           : (
             <div className={style.cases__list_item}>
@@ -44,12 +41,15 @@ GlobalLosses.propTypes = {
   losses: PropTypes.number.isRequired,
   countryName: PropTypes.string.isRequired,
   countries: PropTypes.arrayOf(PropTypes.shape({
-    TotalConfirmed: PropTypes.number.isRequired,
-    Country: PropTypes.string.isRequired,
-    Slug: PropTypes.string.isRequired,
+    deaths: PropTypes.number.isRequired,
+    country: PropTypes.string.isRequired,
+    countryInfo: PropTypes.shape({
+      _id: PropTypes.number.isRequired,
+    }),
   })).isRequired,
   setCountryToObserve: PropTypes.func.isRequired,
   unsetCountryToObserve: PropTypes.func.isRequired,
+  selectedCountryId: PropTypes.number.isRequired,
 };
 
 export default GlobalLosses;

@@ -6,6 +6,8 @@
   height: 100%;
   overflow: scroll;
   &__stat{
+    margin-top: 10px;
+    margin-left: 10px;
     @include flexCenter(column);
     &_name{
       @include fontLight(18px);
@@ -13,12 +15,11 @@
     &_number{
       @include fontInjured(22px);
     }
-
   }
   &__list{
     @include flexCustom(column, space-between, flex-start);
     &_item{
-      width: 100%;
+      width: 90%;
       @include hoverElement();
       margin: 5px 10px;
       padding: 5px 0;
@@ -28,6 +29,16 @@
       }
       &_number{
         @include fontInjured(18px);
+      }
+      &_selected{
+        width: 90%;
+        margin: 5px 10px;
+        padding: 5px 0;
+        background-color: $colorUnderline;
+        border-bottom: 1px solid $colorUnderline;
+        &:hover{
+          cursor: pointer;
+        }
       }
     }
   }

@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import PropTypes from 'prop-types';
 import {
   GET_GLOBAL_INFO,
+  GET_COUNTRIES_INFO,
   SET_COUNTRY_REGIONS_INFO,
   SET_COUNTRY_TO_OBSERVE,
   UNSET_COUNTRY_TO_OBSERVE,
@@ -14,15 +15,23 @@ const GlobalState = ({ children }) => {
   const [state, dispatch] = useReducer(GlobalReducer, {
     global: {},
     countries: [],
-    selectedCountrySlug: '',
-    countryInfo: {},
+    selectedCountryId: -1,
+    selectedCountryInfo: {},
     countryRegions: [],
   });
 
   const getGlobalState = async () => {
-    const data = await api('https://api.covid19api.com/summary');
+    const data = await api('https://disease.sh/v3/covid-19/all');
     dispatch({
       type: GET_GLOBAL_INFO,
+      payload: data,
+    });
+  };
+
+  const getPerCountryState = async () => {
+    const data = await api('https://disease.sh/v3/covid-19/countries');
+    dispatch({
+      type: GET_COUNTRIES_INFO,
       payload: data,
     });
   };
@@ -37,10 +46,10 @@ const GlobalState = ({ children }) => {
     });
   };
 
-  const setCountryToObserve = (newCountrySlug) => {
+  const setCountryToObserve = (newCountryId) => {
     dispatch({
       type: SET_COUNTRY_TO_OBSERVE,
-      payload: newCountrySlug,
+      payload: newCountryId,
     });
   };
 
@@ -59,7 +68,12 @@ const GlobalState = ({ children }) => {
 
   return (
     <GlobalContext.Provider value={{
-      getGlobalState, setCountryToObserve, unsetCountryToObserve, getCountryRegionsInfo, state,
+      getGlobalState,
+      getPerCountryState,
+      setCountryToObserve,
+      unsetCountryToObserve,
+      getCountryRegionsInfo,
+      state,
     }}
     >
       {children}

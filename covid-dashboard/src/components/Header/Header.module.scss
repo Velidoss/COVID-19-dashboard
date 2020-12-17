@@ -6,7 +6,7 @@
   border-radius: 20px;
   height: 9vh;
   text-align: center;
-  @include flexCenter(row);
+  @include flexCustom(row, space-around, center);
   &Text{
     @include fontLight(26px);
   }

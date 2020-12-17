@@ -7,6 +7,7 @@
   height: calc(100% - 20vh - 40px );
   overflow: scroll;
   &__title{
+    margin-left: 10px;
     @include fontLight(18px);
   }
   &__list{
@@ -16,7 +17,7 @@
       padding: 10px;
       margin: 5px 10px;
       border-radius: 20px;
-      width: 100%;
+      width: 90%;
       text-align: start;
       @include hoverElement();
       &_injured{
@@ -25,6 +26,17 @@
       }
       &_country{
         @include fontLight(18px);
+      }
+      &_selected{
+        padding: 10px;
+        margin: 5px 10px;
+        border-radius: 20px;
+        width: 90%;
+        text-align: start;
+        background-color: $colorUnderline;
+        &:hover{
+          cursor: pointer;
+        }
       }
     }
     &_active{

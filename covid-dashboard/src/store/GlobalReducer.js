@@ -4,6 +4,7 @@ import {
   SET_COUNTRY_TO_OBSERVE,
   UNSET_COUNTRY_TO_OBSERVE,
   SET_COUNTRY_REGIONS_INFO,
+  GET_SEARCH_RESULT,
 } from './actionTypes';
 
 const GlobalReducer = (state, action) => {
@@ -35,6 +36,12 @@ const GlobalReducer = (state, action) => {
         ...state,
         selectedCountryId: -1,
         selectedCountryInfo: state.global,
+      };
+    case GET_SEARCH_RESULT:
+      return {
+        ...state,
+        searchResult: state.countries
+          .filter((country) => country.country.toLowerCase().includes(action.query)),
       };
     case SET_COUNTRY_REGIONS_INFO:
       return {

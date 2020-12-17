@@ -27,7 +27,7 @@ function App() {
   // useEffect(() => {
   //   getCountryRegionsInfo(state.selectedCountryInfo.Slug);
   // }, [state.selectedCountryInfo]);
-  console.log(state);
+
   return (
     <div className={style.App}>
       <Header />

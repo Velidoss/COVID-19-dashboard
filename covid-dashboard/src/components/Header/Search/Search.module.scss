@@ -3,6 +3,7 @@
 .search{
   @include flexCustom(row, flex-end);
   justify-self: flex-end;
+  position: relative;
   &__input{
     padding: 5px 10px;
     border: 1px solid $colorUnderline;
@@ -17,4 +18,26 @@
   &:hover{
      cursor: pointer;
    }
+  &__results{
+    position: absolute;
+    top: 27px;
+    left: 0;
+    width: 100%;
+    max-height: 30vh;
+    overflow: scroll;
+    z-index: 50;
+    background-color: $colorBg;
+    border: 1px solid $colorUnderline;
+    &_item{
+      border: 1px solid $colorUnderline;
+      @include flexCustom(row, space-between, center);
+      padding: 5px;
+      &_text{
+
+      }
+      &_img{
+        width: 30px;
+      }
+    }
+  }
 }

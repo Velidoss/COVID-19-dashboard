@@ -6,6 +6,7 @@ import {
   SET_COUNTRY_REGIONS_INFO,
   SET_COUNTRY_TO_OBSERVE,
   UNSET_COUNTRY_TO_OBSERVE,
+  GET_SEARCH_RESULT,
 } from './actionTypes';
 import GlobalReducer from './GlobalReducer';
 import api from '../api/api';
@@ -18,6 +19,7 @@ const GlobalState = ({ children }) => {
     selectedCountryId: -1,
     selectedCountryInfo: {},
     countryRegions: [],
+    searchResult: [],
   });
 
   const getGlobalState = async () => {
@@ -59,6 +61,13 @@ const GlobalState = ({ children }) => {
     });
   };
 
+  const getSearchResult = (query) => {
+    dispatch({
+      type: GET_SEARCH_RESULT,
+      query,
+    });
+  };
+
   GlobalState.propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
@@ -73,6 +82,7 @@ const GlobalState = ({ children }) => {
       setCountryToObserve,
       unsetCountryToObserve,
       getCountryRegionsInfo,
+      getSearchResult,
       state,
     }}
     >

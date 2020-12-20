@@ -15,6 +15,10 @@ import GlobalContext from './GlobalContext';
 const GlobalState = ({ children }) => {
   const [state, dispatch] = useReducer(GlobalReducer, {
     global: {},
+    contentConfig: {
+      dataType: 'overall', // or 'lastDay'
+      quantities: 'byFact', // or 'perHundredThousands'
+    },
     countries: [],
     selectedCountryId: -1,
     selectedCountryInfo: {},

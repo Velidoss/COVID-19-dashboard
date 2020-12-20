@@ -19,6 +19,7 @@ const PerCountryCases = ({
                 unsetCountryToObserve={unsetCountryToObserve}
                 selectedCountryId={selectedCountryId}
                 key={country.countryInfo._id}
+                type="countryCases"
               />
             ))
           : (

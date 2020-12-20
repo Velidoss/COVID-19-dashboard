@@ -41,7 +41,7 @@ const GlobalReducer = (state, action) => {
       return {
         ...state,
         searchResult: state.countries
-          .filter((country) => country.country.toLowerCase().includes(action.query)),
+          .filter((country) => country.country.toLowerCase().includes(action.query.toLowerCase())),
       };
     case SET_COUNTRY_REGIONS_INFO:
       return {

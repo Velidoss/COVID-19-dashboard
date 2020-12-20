@@ -4,6 +4,7 @@
   @include flexCustom(row, flex-end);
   justify-self: flex-end;
   position: relative;
+  transition: 0.3s ease-in-out;
   &__input{
     padding: 5px 10px;
     border: 1px solid $colorUnderline;
@@ -37,6 +38,16 @@
       }
       &_img{
         width: 30px;
+      }
+      &_selected{
+        border: 1px solid $colorUnderline;
+        @include flexCustom(row, space-between, center);
+        padding: 5px;
+        text-align: start;
+        background-color: $colorUnderline;
+        &:hover{
+          cursor: pointer;
+        }
       }
     }
   }

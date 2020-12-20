@@ -4,7 +4,7 @@ import {
   SET_COUNTRY_TO_OBSERVE,
   UNSET_COUNTRY_TO_OBSERVE,
   SET_COUNTRY_REGIONS_INFO,
-  GET_SEARCH_RESULT,
+  GET_SEARCH_RESULT, SET_CONTENT_TYPE,
 } from './actionTypes';
 
 const GlobalReducer = (state, action) => {
@@ -47,6 +47,14 @@ const GlobalReducer = (state, action) => {
       return {
         ...state,
         countryRegions: action.payload,
+      };
+    case SET_CONTENT_TYPE:
+      return {
+        ...state,
+        contentConfig: {
+          ...state.contentConfig,
+          [action.contentType]: action.value,
+        },
       };
     default:
       return state;

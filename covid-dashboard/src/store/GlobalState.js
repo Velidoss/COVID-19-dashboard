@@ -6,7 +6,7 @@ import {
   SET_COUNTRY_REGIONS_INFO,
   SET_COUNTRY_TO_OBSERVE,
   UNSET_COUNTRY_TO_OBSERVE,
-  GET_SEARCH_RESULT,
+  GET_SEARCH_RESULT, SET_CONTENT_TYPE,
 } from './actionTypes';
 import GlobalReducer from './GlobalReducer';
 import api from '../api/api';
@@ -16,8 +16,8 @@ const GlobalState = ({ children }) => {
   const [state, dispatch] = useReducer(GlobalReducer, {
     global: {},
     contentConfig: {
-      dataType: 'overall', // or 'lastDay'
-      quantities: 'byFact', // or 'perHundredThousands'
+      timePeriod: 'fullPeriod', // or 'lastDay'
+      quantities: 'whole', // or 'per100'
     },
     countries: [],
     selectedCountryId: -1,
@@ -59,6 +59,14 @@ const GlobalState = ({ children }) => {
     });
   };
 
+  const setContentConfig = (contentType, value) => {
+    dispatch({
+      type: SET_CONTENT_TYPE,
+      contentType,
+      value,
+    });
+  };
+
   const unsetCountryToObserve = () => {
     dispatch({
       type: UNSET_COUNTRY_TO_OBSERVE,
@@ -87,6 +95,7 @@ const GlobalState = ({ children }) => {
       unsetCountryToObserve,
       getCountryRegionsInfo,
       getSearchResult,
+      setContentConfig,
       state,
     }}
     >

@@ -1,0 +1,27 @@
+@import "../../../common/common";
+.menu{
+  &__btn{
+    @include btnStyling(10px);
+    &_img{
+      width: 20px;
+      height: 20px;
+    }
+    position: relative;
+  }
+  &__items{
+    position: absolute;
+    right: 30px;
+    width: 320px;
+    @include flexCustom(column, center, center);
+    z-index: 200;
+    background-color: $colorMenu;
+    transition: 0.3s ease;
+    &_item{
+      @include flexCustom(row, center, center);
+      @include fontLight(18px);
+      border-bottom: 1px solid $colorUnderline;
+      width: 100%;
+      margin-top: 5px;
+    }
+  }
+}

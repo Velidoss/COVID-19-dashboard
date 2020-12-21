@@ -12,7 +12,7 @@ import GlobalReducer from './GlobalReducer';
 import api from '../api/api';
 import GlobalContext from './GlobalContext';
 import contentConstants from '../constants/contentConstants';
-import apiEndpoints from '../constants/apiEndpints';
+import apiEndpoints from '../constants/apiEndpoints';
 
 const { timePeriod, quantities } = contentConstants;
 const { globalInfoEndpoint, countriesInfoEndpoint } = apiEndpoints;

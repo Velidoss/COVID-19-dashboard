@@ -8,15 +8,16 @@ import Map from './components/Map/Map';
 import GlobalLosses from './components/GlobalLosses/GlobalLosses';
 import Recovered from './components/Recovered/Recovered';
 import Diagram from './components/Diagram/Diagram';
+import contentConstants from './constants/contentConstants';
 
 function App() {
+  const { whole } = contentConstants.quantities;
   const {
     state,
     getGlobalState,
     getPerCountryState,
     setCountryToObserve,
     unsetCountryToObserve,
-    // getCountryRegionsInfo,
   } = useContext(GlobalContext);
 
   useEffect(() => {
@@ -24,36 +25,47 @@ function App() {
     getPerCountryState();
   }, []);
 
-  // useEffect(() => {
-  //   getCountryRegionsInfo(state.selectedCountryInfo.Slug);
-  // }, [state.selectedCountryInfo]);
+  const {
+    contentConfig,
+    countries,
+    selectedCountryInfo,
+  } = state;
+
+  const data = {
+    globalCases: contentConfig.quantities === whole
+      ? selectedCountryInfo.cases
+      : selectedCountryInfo.casesPerOneMillion,
+    countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
+    losses: contentConfig.quantities === whole
+      ? selectedCountryInfo.deaths
+      : selectedCountryInfo.deathsPerOneMillion,
+    countries,
+  };
 
   return (
     <div className={style.App}>
       <Header />
-      <div>
-        {}
-      </div>
       <main className={style.mainContainer}>
         <div className={style.appPanelLeft}>
           {
-            state.selectedCountryInfo.cases
+            data.globalCases
               ? (
                 <GlobalCases
-                  cases={state.selectedCountryInfo.cases}
-                  countryName={state.selectedCountryInfo.country ? state.selectedCountryInfo.country : ''}
+                  cases={data.globalCases}
+                  countryName={data.countryName}
                 />
               )
               : null
           }
           {
-            state.countries
+            data.countries
               ? (
                 <PerCountryCases
                   setCountryToObserve={setCountryToObserve}
                   unsetCountryToObserve={unsetCountryToObserve}
-                  countries={state.countries}
+                  countries={data.countries}
                   selectedCountryId={state.selectedCountryId}
+                  contentConfig={contentConfig}
                 />
               )
               : null
@@ -65,15 +77,16 @@ function App() {
         <div className={style.appPanelRight}>
           <div className={style.appPanelRight__top}>
             {
-              state.selectedCountryInfo.deaths && state.countries
+              data.losses && data.countries
                 ? (
                   <GlobalLosses
-                    losses={state.selectedCountryInfo.deaths}
-                    countries={state.countries}
-                    countryName={state.selectedCountryInfo.country ? state.selectedCountryInfo.country : ''}
+                    losses={data.losses}
+                    countries={data.countries}
+                    countryName={data.countryName ? data.countryName : ''}
                     setCountryToObserve={setCountryToObserve}
                     unsetCountryToObserve={unsetCountryToObserve}
                     selectedCountryId={state.selectedCountryId}
+                    contentConfig={contentConfig}
                   />
                 )
                 : null

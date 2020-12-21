@@ -32,9 +32,6 @@ const Menu = () => {
                 selected={state.contentConfig.timePeriod}
                 setContentConfig={setContentConfig}
               />
-              <div className={style.menu__items_item}>3</div>
-              <div className={style.menu__items_item}>4</div>
-              <div className={style.menu__items_item}>5</div>
             </div>
           )
           : null

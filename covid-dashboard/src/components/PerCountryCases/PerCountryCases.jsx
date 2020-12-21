@@ -4,7 +4,7 @@ import style from './PerCountryCases.module.scss';
 import Country from './Country';
 
 const PerCountryCases = ({
-  countries, setCountryToObserve, unsetCountryToObserve, selectedCountryId,
+  countries, setCountryToObserve, unsetCountryToObserve, selectedCountryId, contentConfig,
 }) => (
   <div className={style.cases}>
     <p className={style.cases__title}>Cases by Country / region/ sovereignty</p>
@@ -19,7 +19,7 @@ const PerCountryCases = ({
                 unsetCountryToObserve={unsetCountryToObserve}
                 selectedCountryId={selectedCountryId}
                 key={country.countryInfo._id}
-                type="countryCases"
+                contentConfig={contentConfig}
               />
             ))
           : (
@@ -43,6 +43,10 @@ PerCountryCases.propTypes = {
   setCountryToObserve: PropTypes.func.isRequired,
   unsetCountryToObserve: PropTypes.func.isRequired,
   selectedCountryId: PropTypes.number.isRequired,
+  contentConfig: PropTypes.shape({
+    timePeriod: PropTypes.string.isRequired,
+    quantities: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default PerCountryCases;

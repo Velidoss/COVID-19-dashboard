@@ -10,8 +10,6 @@ const SearchCountry = ({
   const isSelected = useSelectedCountry(country.countryInfo._id, selectedCountryId);
 
   return (
-    // eslint-disable-next-line max-len
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
     <div
       className={isSelected ? style.search__results_item_selected : style.search__results_item}
       id={country.countryInfo._id}
@@ -25,7 +23,6 @@ const SearchCountry = ({
       }}
     >
       <span className={style.search__results_item_text}>{country.country}</span>
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
       <img className={style.search__results_item_img} src={flagImg} alt="flag" />
     </div>
   );

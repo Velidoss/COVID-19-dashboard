@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import style from '../Menu.module.scss';
+import contentConstants from '../../../../constants/contentConstants';
 
 function SelectTimePeriod({
   selected,
   setContentConfig,
 }) {
   const [selectedValue, setSelectedValue] = useState('');
+  const { lastDay, fullPeriod } = contentConstants.timePeriod;
 
   useEffect(() => {
     setSelectedValue(selected);
@@ -18,10 +20,15 @@ function SelectTimePeriod({
       <select
         className={style.menu__items_item__select}
         value={selectedValue}
-        onChange={(e) => setContentConfig('timePeriod', e.target.value)}
+        onChange={(event) => setContentConfig('timePeriod', event.target.value)}
       >
-        <option className={style.menu__items_item__select_option} value="lastDay">last day</option>
-        <option className={style.menu__items_item__select_option} value="fullPeriod">full period</option>
+        <option className={style.menu__items_item__select_option} value={lastDay}>last day</option>
+        <option
+          className={style.menu__items_item__select_option}
+          value={fullPeriod}
+        >
+          full period
+        </option>
       </select>
     </div>
   );

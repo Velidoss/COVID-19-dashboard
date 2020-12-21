@@ -23,8 +23,6 @@ const Search = () => {
     getSearchResult(query);
   }, [query]);
   return (
-    // eslint-disable-next-line max-len
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
     <div ref={searchRef} className={style.search} onClick={() => toggleOpen(true)}>
       <input className={style.search__input} type="text" value={query} onChange={(event) => changeQuery(event.target.value)} />
       <img className={style.search__img} src={searchSvg} alt="search" />

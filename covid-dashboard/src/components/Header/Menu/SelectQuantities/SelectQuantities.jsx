@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import style from '../Menu.module.scss';
+import contentConstants from '../../../../constants/contentConstants';
 
 const SelectQuantities = ({
   selected,
   setContentConfig,
 }) => {
   const [selectedValue, setSelectedValue] = useState('');
+  const { whole, per100 } = contentConstants.quantities;
 
   useEffect(() => {
     setSelectedValue(selected);
@@ -18,10 +20,10 @@ const SelectQuantities = ({
       <select
         className={style.menu__items_item__select}
         value={selectedValue}
-        onChange={(e) => setContentConfig('quantities', e.target.value)}
+        onChange={(event) => setContentConfig('quantities', event.target.value)}
       >
-        <option className={style.menu__items_item__select_option} value="per100">per 100 000</option>
-        <option className={style.menu__items_item__select_option} value="whole">whole</option>
+        <option className={style.menu__items_item__select_option} value={per100}>per 100000</option>
+        <option className={style.menu__items_item__select_option} value={whole}>whole</option>
       </select>
     </div>
   );

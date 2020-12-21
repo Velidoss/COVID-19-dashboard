@@ -11,13 +11,18 @@ import {
 import GlobalReducer from './GlobalReducer';
 import api from '../api/api';
 import GlobalContext from './GlobalContext';
+import contentConstants from '../constants/contentConstants';
+import apiEndpoints from '../constants/apiEndpints';
+
+const { timePeriod, quantities } = contentConstants;
+const { globalInfoEndpoint, countriesInfoEndpoint } = apiEndpoints;
 
 const GlobalState = ({ children }) => {
   const [state, dispatch] = useReducer(GlobalReducer, {
     global: {},
     contentConfig: {
-      timePeriod: 'fullPeriod', // or 'lastDay'
-      quantities: 'whole', // or 'per100'
+      timePeriod: timePeriod.fullPeriod,
+      quantities: quantities.whole,
     },
     countries: [],
     selectedCountryId: -1,
@@ -27,7 +32,7 @@ const GlobalState = ({ children }) => {
   });
 
   const getGlobalState = async () => {
-    const data = await api('https://disease.sh/v3/covid-19/all');
+    const data = await api(globalInfoEndpoint);
     dispatch({
       type: GET_GLOBAL_INFO,
       payload: data,
@@ -35,7 +40,7 @@ const GlobalState = ({ children }) => {
   };
 
   const getPerCountryState = async () => {
-    const data = await api('https://disease.sh/v3/covid-19/countries');
+    const data = await api(countriesInfoEndpoint);
     dispatch({
       type: GET_COUNTRIES_INFO,
       payload: data,

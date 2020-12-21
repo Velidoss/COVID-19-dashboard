@@ -4,8 +4,13 @@ import style from './GlobalLosses.module.scss';
 import CountryWithLosses from './CountryWithLosses';
 
 const GlobalLosses = ({
-  // eslint-disable-next-line no-unused-vars
-  losses, countries, countryName, setCountryToObserve, unsetCountryToObserve, selectedCountryId,
+  losses,
+  countries,
+  countryName,
+  setCountryToObserve,
+  unsetCountryToObserve,
+  selectedCountryId,
+  contentConfig,
 }) => (
   <div className={style.losses}>
     <div className={style.losses__stat}>
@@ -17,14 +22,13 @@ const GlobalLosses = ({
         countries
           ? countries.sort((a, b) => b.TotalDeaths - a.TotalDeaths)
             .map((country) => (
-              // eslint-disable-next-line max-len
-              // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
               <CountryWithLosses
                 country={country}
                 setCountryToObserve={setCountryToObserve}
                 unsetCountryToObserve={unsetCountryToObserve}
                 selectedCountryId={selectedCountryId}
                 key={country.countryInfo._id}
+                contentConfig={contentConfig}
               />
             ))
           : (
@@ -50,6 +54,10 @@ GlobalLosses.propTypes = {
   setCountryToObserve: PropTypes.func.isRequired,
   unsetCountryToObserve: PropTypes.func.isRequired,
   selectedCountryId: PropTypes.number.isRequired,
+  contentConfig: PropTypes.shape({
+    timePeriod: PropTypes.string.isRequired,
+    quantities: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default GlobalLosses;

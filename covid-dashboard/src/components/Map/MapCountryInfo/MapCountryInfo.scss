@@ -1,0 +1,9 @@
+@import '../../../common/common';
+
+.mapCountryInfo{
+  width: 10px;
+  height: 10px;
+  background-color: $colorInjured;
+  border-radius: 50%;
+  z-index: 20;
+}

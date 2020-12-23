@@ -72,7 +72,11 @@ function App() {
           }
         </div>
         <div className={style.mapContainer}>
-          <Map />
+          {
+            data.countries.length > 0
+              ? <Map countries={data.countries} />
+              : null
+          }
         </div>
         <div className={style.appPanelRight}>
           <div className={style.appPanelRight__top}>

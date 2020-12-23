@@ -6,7 +6,6 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import MapMarker from './MapMarker/MapMarker';
 import MapCountryInfo from './MapCountryInfo/MapCountryInfo';
 
-// eslint-disable-next-line no-unused-vars
 const Map = ({ countries }) => {
   const MapComponent = ReactMapboxGl({
     accessToken: mapBoxToken,
@@ -46,6 +45,7 @@ const Map = ({ countries }) => {
             }}
           >
             <MapCountryInfo
+              close={() => toggleSelected(null)}
               country={selected.country}
               recovered={selected.recovered}
               cases={selected.cases}

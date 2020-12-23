@@ -40,6 +40,9 @@ function App() {
       ? selectedCountryInfo.deaths
       : selectedCountryInfo.deathsPerOneMillion,
     countries,
+    recovered: contentConfig.quantities === whole
+      ? selectedCountryInfo.recovered
+      : selectedCountryInfo.recoveredPerOneMillion,
   };
 
   return (
@@ -95,7 +98,21 @@ function App() {
                 )
                 : null
             }
-            <Recovered />
+            {
+              data.recovered && data.countries
+                ? (
+                  <Recovered
+                    recovered={data.recovered}
+                    countries={data.countries}
+                    countryName={data.countryName ? data.countryName : ''}
+                    setCountryToObserve={setCountryToObserve}
+                    unsetCountryToObserve={unsetCountryToObserve}
+                    selectedCountryId={state.selectedCountryId}
+                    contentConfig={contentConfig}
+                  />
+                )
+                : null
+            }
           </div>
           <div className={style.appPanelRight__bot}>
             <Diagram />

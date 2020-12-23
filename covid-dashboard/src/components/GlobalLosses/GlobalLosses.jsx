@@ -20,7 +20,7 @@ const GlobalLosses = ({
     <div className={style.losses__list}>
       {
         countries
-          ? countries.sort((a, b) => b.TotalDeaths - a.TotalDeaths)
+          ? countries.sort((a, b) => b.deaths - a.deaths)
             .map((country) => (
               <CountryWithLosses
                 country={country}

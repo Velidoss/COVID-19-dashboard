@@ -18,3 +18,31 @@
 .stretchButton{
   @include stretchBtn();
 }
+
+.stretchedBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #9FFFF5;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100;
+  .GlobalCases__text{
+    @include fontLight(32px)
+  }
+  .GlobalCases__number{
+    @include fontInjured(40px)
+  }
+}
+.normalGlobalCasesBlock{
+  position: relative;
+  height: 20vh;
+  z-index: auto;
+}

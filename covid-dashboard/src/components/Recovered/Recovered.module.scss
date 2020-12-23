@@ -5,20 +5,27 @@
   width: 100%;
   height: 100%;
   margin-left: 20px;
+  overflow: scroll;
   &__title{
+    margin-top: 10px;
     @include flexCenter(column);
     &_top{
       @include fontLight(18px);
     }
     &_bot{
       @include fontLight(22px);
+      color: $colorRecovered;
     }
 
   }
   &__list{
-    @include flexCenter(column);
+    @include flexCustom(column, space-between, flex-start);
+    width: 100%;
     &_item{
-      border-bottom: 1px solid $colorUnderline;
+      width: 90%;
+      @include hoverElement();
+      margin: 5px 10px;
+      padding: 5px 0;
       &_loss{
         @include fontInjured(18px);
         margin-right: 20px;
@@ -28,6 +35,14 @@
       }
       &_city{
         @include fontLight(18px);
+      }
+      &_selected{
+        width: 90%;
+        border-bottom: 1px solid $colorUnderline;
+        cursor: pointer;
+        background-color: $colorUnderline;
+        margin: 5px 10px;
+        padding: 5px 0;
       }
     }
   }

@@ -14,7 +14,6 @@ const Menu = () => {
   const [open, toggleOpen] = useState(false);
   const menuRef = useRef();
   useClickOutside(menuRef, () => toggleOpen(false));
-  console.log(state);
   return (
     <div className={style.menu} ref={menuRef}>
       <button className={style.menu__btn} onClick={() => toggleOpen(!open)} type="button">

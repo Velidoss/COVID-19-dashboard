@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import ReactMapboxGl, { Popup } from 'react-mapbox-gl';
 import PropTypes from 'prop-types';
-import { mapBoxToken } from '../../constants/apiEndpoints';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapMarker from './MapMarker/MapMarker';
 import MapCountryInfo from './MapCountryInfo/MapCountryInfo';
+import { mapBoxToken } from '../../constants/apiEndpoints';
 
 const Map = ({ countries }) => {
   const MapComponent = ReactMapboxGl({

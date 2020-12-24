@@ -20,13 +20,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe05b8fb-940c-47b4-8183-1d7861e54c9a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Diagram/Diagram.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Diagram/Diagram.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalCases/GlobalCases.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalCases/GlobalCases.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalLosses/CountryWithLosses.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalLosses/CountryWithLosses.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalLosses/GlobalLosses.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalLosses/GlobalLosses.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/Menu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/SelectQuantities/SelectQuantities.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/SelectQuantities/SelectQuantities.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/SelectTimePeriod/SelectTimePeriod.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/SelectTimePeriod/SelectTimePeriod.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Search/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Search/Search.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Search/SearchCountry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Search/SearchCountry.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/Map.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapCountryInfo/MapCountryInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapCountryInfo/MapCountryInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapMarker/MapMarker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapMarker/MapMarker.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/PerCountryCases/Country.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/PerCountryCases/Country.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/PerCountryCases/PerCountryCases.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/PerCountryCases/PerCountryCases.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Recovered/CountryWithRecovered.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Recovered/CountryWithRecovered.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Recovered/Recovered.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Recovered/Recovered.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/constants/apiEndpoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/constants/apiEndpoints.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/constants/contentConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/constants/contentConstants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/customHooks/useClickOutside.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/customHooks/useClickOutside.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/customHooks/useSelectedCountry.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/customHooks/useSelectedCountry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalState.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/store/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/store/actionTypes.js" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -53,12 +91,35 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../basic-js" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="fe05b8fb-940c-47b4-8183-1d7861e54c9a" name="Default Changelist" comment="" />
@@ -67,23 +128,26 @@
       <option name="presentableId" value="Default" />
       <updated>1600335988125</updated>
       <workItem from="1600335989194" duration="41472000" />
+      <workItem from="1608761504911" duration="618000" />
+      <workItem from="1608786677646" duration="424000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="686" y="215" key="FileChooserDialogImpl" timestamp="1600448807264">

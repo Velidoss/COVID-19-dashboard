@@ -4,7 +4,7 @@ import {
   SET_COUNTRY_TO_OBSERVE,
   UNSET_COUNTRY_TO_OBSERVE,
   SET_COUNTRY_REGIONS_INFO,
-  GET_SEARCH_RESULT, SET_CONTENT_TYPE,
+  GET_SEARCH_RESULT, SET_CONTENT_TYPE, SET_DIAGRAM_STATS,
 } from './actionTypes';
 
 const GlobalReducer = (state, action) => {
@@ -55,6 +55,11 @@ const GlobalReducer = (state, action) => {
           ...state.contentConfig,
           [action.contentType]: action.value,
         },
+      };
+    case SET_DIAGRAM_STATS:
+      return {
+        ...state,
+        diagramStats: action.payload,
       };
     default:
       return state;

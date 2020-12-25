@@ -9,6 +9,7 @@ import GlobalLosses from './components/GlobalLosses/GlobalLosses';
 import Recovered from './components/Recovered/Recovered';
 import Diagram from './components/Diagram/Diagram';
 import contentConstants from './constants/contentConstants';
+import DiagramState from './store/DiagramContext/DiagramState';
 
 function App() {
   const { whole } = contentConstants.quantities;
@@ -115,7 +116,11 @@ function App() {
             }
           </div>
           <div className={style.appPanelRight__bot}>
-            <Diagram />
+            <DiagramState>
+              <Diagram
+                countryName={data.countryName}
+              />
+            </DiagramState>
           </div>
         </div>
       </main>

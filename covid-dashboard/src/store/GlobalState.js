@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {
   GET_GLOBAL_INFO,
   GET_COUNTRIES_INFO,
-  SET_COUNTRY_REGIONS_INFO,
   SET_COUNTRY_TO_OBSERVE,
   UNSET_COUNTRY_TO_OBSERVE,
   GET_SEARCH_RESULT, SET_CONTENT_TYPE,
@@ -47,16 +46,6 @@ const GlobalState = ({ children }) => {
     });
   };
 
-  const getCountryRegionsInfo = async (country) => {
-    const date = new Date();
-    const dateToInsert = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-    const data = await api(`https://api.covid19tracking.narrativa.com/api/${dateToInsert}/country/${country}`);
-    dispatch({
-      type: SET_COUNTRY_REGIONS_INFO,
-      payload: data,
-    });
-  };
-
   const setCountryToObserve = (newCountryId) => {
     dispatch({
       type: SET_COUNTRY_TO_OBSERVE,
@@ -85,20 +74,12 @@ const GlobalState = ({ children }) => {
     });
   };
 
-  GlobalState.propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node,
-    ]).isRequired,
-  };
-
   return (
     <GlobalContext.Provider value={{
       getGlobalState,
       getPerCountryState,
       setCountryToObserve,
       unsetCountryToObserve,
-      getCountryRegionsInfo,
       getSearchResult,
       setContentConfig,
       state,
@@ -107,6 +88,13 @@ const GlobalState = ({ children }) => {
       {children}
     </GlobalContext.Provider>
   );
+};
+
+GlobalState.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
 
 export default GlobalState;

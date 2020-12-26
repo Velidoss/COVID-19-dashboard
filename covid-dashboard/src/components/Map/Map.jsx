@@ -14,7 +14,6 @@ const Map = ({ countries }) => {
     longitude: 32,
     zoom: 3,
   });
-  console.log(process.env.REACT_APP_MAX_BOX_TOKEN);
   return (
     <ReactMapGL
       // eslint-disable-next-line react/jsx-props-no-spreading

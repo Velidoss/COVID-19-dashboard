@@ -38,7 +38,6 @@ function App() {
     getPerCountryState();
   }, []);
 
-  console.log(data);
   useEffect(() => {
     switch (contentConfig.quantities) {
       case per100:

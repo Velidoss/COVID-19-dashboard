@@ -2,21 +2,21 @@ import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import style from './GlobalCases.module.scss';
 import expandSvg from '../../assets/svg/expandSvg.svg';
+import contentConstants from '../../constants/contentConstants';
 
 const GlobalCases = ({ cases, countryName, countryFlag }) => {
   const [isStretched, toggleIsStretched] = useState(false);
-  const [className, setClassName] = useState('');
   const casesRef = useRef();
   useEffect(() => {
     if (isStretched === true) {
-      setClassName('stretchedBlock');
+      casesRef.current.attributes.style = contentConstants.styles.stretchedBlock;
     } else {
-      setClassName('GlobalCases');
+      casesRef.current.attributes.style = '';
     }
   }, [isStretched]);
-  console.log(countryFlag);
+
   return (
-    <div ref={casesRef} className={style[`${className}`]}>
+    <div ref={casesRef} className={style.GlobalCases}>
       <button type="button" className={style.stretchButton} onClick={() => toggleIsStretched(!isStretched)}><img src={expandSvg} alt="expand" /></button>
       <p className={style.GlobalCases__text}>
         {

@@ -9,10 +9,10 @@
     width: 100%;
     @include flexCustom(row, space-around, center);
     flex: 1;
-    margin-top: 10px;
+    padding-top: 10px;
     &__item{
       &_select{
-
+        @include selectElement();
       }
     }
   }

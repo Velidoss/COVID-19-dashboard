@@ -78,27 +78,13 @@ function App() {
     }
   }, [contentConfig.quantities, state]);
 
-  // const data = {
-  //   globalCases: contentConfig.quantities === whole
-  //     ? selectedCountryInfo.cases
-  //     : selectedCountryInfo.casesPerOneMillion,
-  //   countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
-  //   losses: contentConfig.quantities === whole
-  //     ? selectedCountryInfo.deaths
-  //     : selectedCountryInfo.deathsPerOneMillion,
-  //   countries,
-  //   recovered: contentConfig.quantities === whole
-  //     ? selectedCountryInfo.recovered
-  //     : selectedCountryInfo.recoveredPerOneMillion,
-  // };
-
   return (
     <div className={style.App}>
       <Header />
       <main className={style.mainContainer}>
         <div className={style.appPanelLeft}>
           {
-            data.globalCases
+            data.globalCases !== undefined
               ? (
                 <GlobalCases
                   cases={data.globalCases}
@@ -131,7 +117,7 @@ function App() {
         <div className={style.appPanelRight}>
           <div className={style.appPanelRight__top}>
             {
-              data.losses && data.countries
+              data.losses !== undefined && data.countries
                 ? (
                   <GlobalLosses
                     losses={data.losses}
@@ -146,7 +132,7 @@ function App() {
                 : null
             }
             {
-              data.recovered && data.countries
+              data.recovered !== undefined && data.countries
                 ? (
                   <Recovered
                     recovered={data.recovered}

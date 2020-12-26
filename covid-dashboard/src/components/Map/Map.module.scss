@@ -24,3 +24,7 @@
     transform: scale(1.2);
   }
 }
+
+.controls__select{
+  @include selectElement();
+}

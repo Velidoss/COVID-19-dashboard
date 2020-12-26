@@ -23,11 +23,11 @@ const Map = ({ countries }) => {
         <select
           value={statType}
           onChange={(event) => toggleStatType(event.target.value)}
-          className={style.diagramContainer__controls__item_select}
+          className={style.controls__select}
         >
-          <option value="cases">cases</option>
-          <option value="deaths">deaths</option>
-          <option value="recovered">recovered</option>
+          <option className={style.controls__select_option} value="cases">cases</option>
+          <option className={style.controls__select_option} value="deaths">deaths</option>
+          <option className={style.controls__select_option} value="recovered">recovered</option>
         </select>
       </div>
       <div className={style.map__container}>

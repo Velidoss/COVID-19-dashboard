@@ -99,4 +99,12 @@ $colorMenu: #73dfb6;
   }
 }
 
+@mixin selectElement() {
+  @include fontLight(18px);
+  background: #9ffff5;
+  transition: .4s ease-in-out;
+  &:hover{
+    cursor: pointer;
+  }
+}
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactMapGL, { Popup } from 'react-map-gl';
-import { mapBoxToken } from '../../constants/apiEndpoints';
 import MapMarker from './MapMarker/MapMarker';
 import MapCountryInfo from './MapCountryInfo/MapCountryInfo';
 
@@ -15,12 +14,12 @@ const Map = ({ countries }) => {
     longitude: 32,
     zoom: 3,
   });
-  console.log(selected);
+  console.log(process.env.REACT_APP_MAX_BOX_TOKEN);
   return (
     <ReactMapGL
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...viewport}
-      mapboxApiAccessToken={mapBoxToken}
+      mapboxApiAccessToken={process.env.REACT_APP_MAX_BOX_TOKEN}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
     >
       {

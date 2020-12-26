@@ -6,11 +6,13 @@ import DiagramContext from '../../store/DiagramContext/DiagramContext';
 
 const Diagram = ({ countryName }) => {
   const { state, getDiagramStatistics } = useContext(DiagramContext);
-  // eslint-disable-next-line no-unused-vars
-  // const { cases, deaths, recovered } = state.diagramStats;
 
   const [period, setPeriod] = useState(30);
   const [statType, setStatType] = useState('cases');
+  const [fillColor, setFillColor] = useState({
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgba(255, 99, 132, 0.2)',
+  });
   const [chartData, setChartData] = useState({
     labels: state.diagramStats[statType] ? Object.keys(state.diagramStats[statType]) : [],
     datasets: [
@@ -18,8 +20,8 @@ const Diagram = ({ countryName }) => {
         label: 'Cases statistics',
         data: state.diagramStats[statType] ? Object.values(state.diagramStats[statType]) : [],
         fill: true,
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgba(255, 99, 132, 0.2)',
+        backgroundColor: fillColor.backgroundColor,
+        borderColor: fillColor.borderColor,
       },
     ],
   });
@@ -33,13 +35,12 @@ const Diagram = ({ countryName }) => {
           label: `Number of ${statType}${countryName ? ` in ${countryName}` : ''}`,
           data: state.diagramStats[statType] ? Object.values(state.diagramStats[statType]) : [],
           fill: true,
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgba(255, 99, 132, 0.2)',
+          backgroundColor: fillColor.backgroundColor,
+          borderColor: fillColor.borderColor,
         },
       ],
     });
-    console.log(countryName, state);
-  }, [countryName, period]);
+  }, [countryName, period, statType, fillColor]);
 
   useEffect(() => {
     setChartData({
@@ -49,8 +50,46 @@ const Diagram = ({ countryName }) => {
           label: `Number of ${statType}${countryName ? ` in ${countryName}` : ''}`,
           data: state.diagramStats[statType] ? Object.values(state.diagramStats[statType]) : [],
           fill: true,
+          backgroundColor: fillColor.backgroundColor,
+          borderColor: fillColor.borderColor,
+        },
+      ],
+    });
+  }, [state]);
+
+  useEffect(() => {
+    switch (statType) {
+      case 'deaths': {
+        setFillColor({
+          backgroundColor: 'rgb(39,39,43)',
+          borderColor: 'rgba(255,204,233,0.2)',
+        });
+        break;
+      }
+      case 'recovered': {
+        setFillColor({
+          backgroundColor: 'rgb(25,81,32)',
+          borderColor: 'rgb(9,66,20)',
+        });
+        break;
+      }
+      default: {
+        setFillColor({
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgba(255, 99, 132, 0.2)',
+        });
+      }
+    }
+
+    setChartData({
+      labels: state.diagramStats[statType] ? Object.keys(state.diagramStats[statType]) : [],
+      datasets: [
+        {
+          label: `Number of ${statType}${countryName ? ` in ${countryName}` : ''}`,
+          data: state.diagramStats[statType] ? Object.values(state.diagramStats[statType]) : [],
+          fill: true,
+          backgroundColor: fillColor.backgroundColor,
+          borderColor: fillColor.borderColor,
         },
       ],
     });
@@ -88,25 +127,29 @@ const Diagram = ({ countryName }) => {
           </select>
         </div>
       </div>
-      <Line
-        data={chartData}
-        options={{
-          responsive: true,
-          maintainAspectRatio: false,
-          title: { text: 'Number of cases', display: true },
-          scales: {
-            yAxes: [
-              {
-                ticks: {
-                  autoskip: true,
-                  maxTicksLimit: 10,
+      <div className={style.diagramContainer__graph}>
+        {console.log(chartData)}
+        <Line
+          data={chartData}
+          options={{
+            responsive: true,
+            maintainAspectRatio: false,
+            title: { text: 'Number of cases', display: true },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    autoskip: true,
+                    maxTicksLimit: 10,
+                  },
                 },
-              },
-            ],
-          },
-        }}
-      />
+              ],
+            },
+          }}
+        />
+      </div>
     </div>
+
   );
 };
 

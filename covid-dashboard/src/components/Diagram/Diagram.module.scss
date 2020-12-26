@@ -2,6 +2,15 @@
 
 .diagramContainer{
   @include blockStyling();
+  @include flexCustom(column, center);
   width: 100%;
   height: calc(100% - 40px) ;
+  &__controls{
+    @include flexCustom(row, center);
+    flex: 1;
+  }
+  &__graph{
+    width: 100%;
+    height: 100%;
+  }
 }

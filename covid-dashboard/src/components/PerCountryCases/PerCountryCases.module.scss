@@ -2,10 +2,11 @@
 
 .cases{
   @include flexCustom(column, flex-start);
+  @include scrollBar();
   @include blockStyling();
   width: 100%;
   height: calc(100% - 20vh - 40px );
-  overflow: scroll;
+  overflow-y: scroll;
   &__title{
     margin-left: 10px;
     @include fontLight(18px);

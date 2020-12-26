@@ -2,6 +2,16 @@
 
 body{
   background: $colorBg;
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: $colorBlock;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
 }
 .App{
   margin: 0 auto;

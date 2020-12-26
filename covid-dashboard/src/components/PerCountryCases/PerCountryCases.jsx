@@ -7,7 +7,7 @@ const PerCountryCases = ({
   countries, setCountryToObserve, unsetCountryToObserve, selectedCountryId, contentConfig,
 }) => (
   <div className={style.cases}>
-    <p className={style.cases__title}>Cases by Country / region/ sovereignty</p>
+    <p className={style.cases__title}>Cases by Country</p>
     <div className={style.cases__list}>
       {
         countries.length > 0

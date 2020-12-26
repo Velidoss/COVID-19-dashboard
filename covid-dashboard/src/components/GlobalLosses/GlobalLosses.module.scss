@@ -26,6 +26,9 @@
       &_name{
         @include fontLight(18px);
         margin-right: 20px;
+        &_flag{
+          @include flag();
+        }
       }
       &_number{
         @include fontInjured(18px);
@@ -43,3 +46,4 @@
     }
   }
 }
+

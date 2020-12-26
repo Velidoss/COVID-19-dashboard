@@ -24,11 +24,14 @@ const Country = ({
         }
       }}
     >
-      <span className={style.losses__list_item_name}>{country.country}</span>
       <span className={style.losses__list_item_number}>
         {`${quantities === whole ? country.deaths : country.deathsPerOneMillion} `}
-        deaths
       </span>
+      <span className={style.losses__list_item_name}>
+        <img className={style.losses__list_item_name_flag} src={country.countryInfo.flag} alt="flag" />
+        {country.country}
+      </span>
+
     </div>
   );
 };
@@ -40,6 +43,7 @@ Country.propTypes = {
     deathsPerOneMillion: PropTypes.number.isRequired,
     countryInfo: PropTypes.shape({
       _id: PropTypes.number.isRequired,
+      flag: PropTypes.string.isRequired,
     }),
   }).isRequired,
   setCountryToObserve: PropTypes.func.isRequired,

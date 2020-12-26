@@ -108,6 +108,11 @@ $colorMenu: #73dfb6;
   }
 }
 
+@mixin flag(){
+  width: 30px;
+  margin-right: 10px;
+}
+
 @mixin scrollBar() {
   ::-webkit-scrollbar {
     width: 10px;

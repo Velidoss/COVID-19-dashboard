@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import style from './GlobalCases.module.scss';
 import expandSvg from '../../assets/svg/expandSvg.svg';
 
-const GlobalCases = ({ cases, countryName }) => {
+const GlobalCases = ({ cases, countryName, countryFlag }) => {
   const [isStretched, toggleIsStretched] = useState(false);
   const [className, setClassName] = useState('');
   const casesRef = useRef();
@@ -14,10 +14,18 @@ const GlobalCases = ({ cases, countryName }) => {
       setClassName('GlobalCases');
     }
   }, [isStretched]);
+  console.log(countryFlag);
   return (
     <div ref={casesRef} className={style[`${className}`]}>
       <button type="button" className={style.stretchButton} onClick={() => toggleIsStretched(!isStretched)}><img src={expandSvg} alt="expand" /></button>
-      <p className={style.GlobalCases__text}>{countryName ? `Cases in ${countryName}` : 'Global cases'}</p>
+      <p className={style.GlobalCases__text}>
+        {
+          countryFlag.length > 0
+            ? <img className={style.GlobalCases__flag} src={countryFlag} alt="flag" />
+            : ''
+        }
+        {countryName ? `Cases in ${countryName}` : 'Global cases'}
+      </p>
       <p className={style.GlobalCases__number}>{cases}</p>
     </div>
   );
@@ -26,6 +34,7 @@ const GlobalCases = ({ cases, countryName }) => {
 GlobalCases.propTypes = {
   cases: PropTypes.number.isRequired,
   countryName: PropTypes.string.isRequired,
+  countryFlag: PropTypes.string.isRequired,
 };
 
 export default GlobalCases;

@@ -25,7 +25,7 @@
     left: 0;
     width: 100%;
     max-height: 30vh;
-    overflow: scroll;
+    overflow-y: scroll;
     z-index: 50;
     background-color: $colorBg;
     border: 1px solid $colorUnderline;

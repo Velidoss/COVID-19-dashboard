@@ -64,6 +64,7 @@ const Map = ({ countries }) => {
                   country={selected.country}
                   statType={statType}
                   displayInfo={selected[statType]}
+                  countryFlag={selected.countryInfo.flag}
                 />
               </Popup>
             ) : null

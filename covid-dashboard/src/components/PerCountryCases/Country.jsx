@@ -28,6 +28,11 @@ const Country = ({
         {quantities === whole ? country.cases : country.casesPerOneMillion}
       </span>
       <span className={style.cases__list_item_country}>{country.country}</span>
+      <img
+        className={style.cases__list_item_flag}
+        src={country.countryInfo.flag}
+        alt="flag"
+      />
     </div>
   );
 };
@@ -39,6 +44,7 @@ Country.propTypes = {
     casesPerOneMillion: PropTypes.number.isRequired,
     countryInfo: PropTypes.shape({
       _id: PropTypes.number.isRequired,
+      flag: PropTypes.string.isRequired,
     }),
   }).isRequired,
   setCountryToObserve: PropTypes.func.isRequired,

@@ -27,6 +27,7 @@ const CountryWithRecovered = ({
         {`${quantities === whole ? country.recovered : country.recoveredPerOneMillion} `}
       </span>
       <span className={style.recovered__list_item_country}>
+        <img className={style.recovered__list_item_country_flag} src={country.countryInfo.flag} alt="flag" />
         {country.country}
       </span>
     </div>
@@ -40,6 +41,7 @@ CountryWithRecovered.propTypes = {
     recoveredPerOneMillion: PropTypes.number.isRequired,
     countryInfo: PropTypes.shape({
       _id: PropTypes.number.isRequired,
+      flag: PropTypes.string.isRequired,
     }),
   }).isRequired,
   setCountryToObserve: PropTypes.func.isRequired,

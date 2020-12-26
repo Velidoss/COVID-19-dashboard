@@ -4,10 +4,16 @@
   position: relative;
   width: 10px;
   height: 10px;
-  background-color: $colorInjured;
   border-radius: 50%;
   z-index: 20;
   transition: 1s ease-in-out;
+  &__text{
+    @include fontLight(14px);
+    &_flag{
+      @include flag();
+    }
+  }
+
   &:hover{
     cursor: pointer;
   }

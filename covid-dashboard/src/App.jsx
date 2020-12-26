@@ -29,6 +29,7 @@ function App() {
 
   const [data, setData] = useState({
     countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
+    countryFlag: selectedCountryInfo.countryInfo ? selectedCountryInfo.countryInfo.flag : '',
     countries,
   });
 
@@ -48,6 +49,7 @@ function App() {
           recovered: selectedCountryInfo.recoveredPerOneMillion,
           countries,
           countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
+          countryFlag: selectedCountryInfo.countryInfo ? selectedCountryInfo.countryInfo.flag : '',
         });
         break;
       case lastDay:
@@ -58,6 +60,7 @@ function App() {
           recovered: selectedCountryInfo.todayRecovered,
           countries,
           countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
+          countryFlag: selectedCountryInfo.countryInfo ? selectedCountryInfo.countryInfo.flag : '',
         });
         break;
       case whole: {
@@ -68,6 +71,7 @@ function App() {
           recovered: selectedCountryInfo.recovered,
           countries,
           countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
+          countryFlag: selectedCountryInfo.countryInfo ? selectedCountryInfo.countryInfo.flag : '',
         });
         break;
       }
@@ -89,6 +93,7 @@ function App() {
                 <GlobalCases
                   cases={data.globalCases}
                   countryName={data.countryName}
+                  countryFlag={data.countryFlag}
                 />
               )
               : null

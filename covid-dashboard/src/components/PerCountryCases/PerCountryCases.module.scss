@@ -25,6 +25,10 @@
         @include fontInjured(18px);
         margin-right: 20px;
       }
+      &_flag{
+        @include flag();
+        margin-left: 10px;
+      }
       &_country{
         @include fontLight(18px);
       }

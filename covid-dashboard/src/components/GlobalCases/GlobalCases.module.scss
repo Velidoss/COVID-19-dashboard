@@ -35,7 +35,8 @@
   height: 100%;
   z-index: 100;
   .GlobalCases__text{
-    @include fontLight(32px)
+    @include fontLight(32px);
+    @include flexCenter(row);
   }
   .GlobalCases__number{
     @include fontInjured(40px)
@@ -45,4 +46,8 @@
   position: relative;
   height: 20vh;
   z-index: auto;
+}
+
+.GlobalCases__flag{
+ @include flag();
 }

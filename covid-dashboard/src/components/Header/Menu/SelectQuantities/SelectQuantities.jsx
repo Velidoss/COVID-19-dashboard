@@ -8,7 +8,7 @@ const SelectQuantities = ({
   setContentConfig,
 }) => {
   const [selectedValue, setSelectedValue] = useState('');
-  const { whole, per100 } = contentConstants.quantities;
+  const { whole, per100, lastDay } = contentConstants.quantities;
 
   useEffect(() => {
     setSelectedValue(selected);
@@ -24,6 +24,7 @@ const SelectQuantities = ({
       >
         <option className={style.menu__items_item__select_option} value={per100}>per 100000</option>
         <option className={style.menu__items_item__select_option} value={whole}>whole</option>
+        <option className={style.menu__items_item__select_option} value={lastDay}>lastDay</option>
       </select>
     </div>
   );

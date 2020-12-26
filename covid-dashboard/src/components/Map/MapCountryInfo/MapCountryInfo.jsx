@@ -3,21 +3,18 @@ import PropTypes from 'prop-types';
 import style from './MapCountryInfo.scss';
 
 const MapCountryInfo = ({
-  cases, deaths, country, recovered,
+  country, statType, displayInfo,
 }) => (
   <div className={style.mapCountryInfo}>
     <p>{`Country name: ${country}`}</p>
-    <p>{`Number of cases: ${cases}`}</p>
-    <p>{`Number of deaths: ${deaths}`}</p>
-    <p>{`Number of recovered: ${recovered}`}</p>
+    <p>{`Number of ${statType}: ${displayInfo}`}</p>
   </div>
 );
 
 MapCountryInfo.propTypes = {
-  cases: PropTypes.number.isRequired,
-  deaths: PropTypes.number.isRequired,
   country: PropTypes.string.isRequired,
-  recovered: PropTypes.number.isRequired,
+  statType: PropTypes.string.isRequired,
+  displayInfo: PropTypes.number.isRequired,
 };
 
 export default MapCountryInfo;

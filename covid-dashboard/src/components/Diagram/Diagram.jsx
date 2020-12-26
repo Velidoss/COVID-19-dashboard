@@ -98,11 +98,11 @@ const Diagram = ({ countryName }) => {
   return (
     <div className={style.diagramContainer}>
       <div className={style.diagramContainer__controls}>
-        <div className={style.diagramContainer__controls__period}>
+        <div className={style.diagramContainer__controls__item}>
           <select
             value={period}
             onChange={(event) => setPeriod(event.target.value)}
-            className={style.diagramContainer__controls__period_select}
+            className={style.diagramContainer__controls__item_select}
           >
             <option value="30">30 days</option>
             <option value="60">60 days</option>
@@ -115,11 +115,11 @@ const Diagram = ({ countryName }) => {
             <option value="300">300 days</option>
           </select>
         </div>
-        <div className={style.diagramContainer__controls__type}>
+        <div className={style.diagramContainer__controls__item}>
           <select
             value={statType}
             onChange={(event) => setStatType(event.target.value)}
-            className={style.diagramContainer__controls__type_select}
+            className={style.diagramContainer__controls__item_select}
           >
             <option value="cases">cases</option>
             <option value="deaths">deaths</option>
@@ -128,13 +128,11 @@ const Diagram = ({ countryName }) => {
         </div>
       </div>
       <div className={style.diagramContainer__graph}>
-        {console.log(chartData)}
         <Line
           data={chartData}
           options={{
             responsive: true,
             maintainAspectRatio: false,
-            title: { text: 'Number of cases', display: true },
             scales: {
               yAxes: [
                 {

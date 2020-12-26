@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import GlobalContext from './store/GlobalContext';
 import style from './App.module.scss';
 import Header from './components/Header/Header';
@@ -12,7 +12,7 @@ import DiagramState from './store/DiagramContext/DiagramState';
 import Map from './components/Map/Map';
 
 function App() {
-  const { whole } = contentConstants.quantities;
+  const { whole, per100, lastDay } = contentConstants.quantities;
   const {
     state,
     getGlobalState,
@@ -21,30 +21,76 @@ function App() {
     unsetCountryToObserve,
   } = useContext(GlobalContext);
 
-  useEffect(() => {
-    getGlobalState();
-    getPerCountryState();
-  }, []);
-
   const {
     contentConfig,
     countries,
     selectedCountryInfo,
   } = state;
 
-  const data = {
-    globalCases: contentConfig.quantities === whole
-      ? selectedCountryInfo.cases
-      : selectedCountryInfo.casesPerOneMillion,
+  const [data, setData] = useState({
     countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
-    losses: contentConfig.quantities === whole
-      ? selectedCountryInfo.deaths
-      : selectedCountryInfo.deathsPerOneMillion,
     countries,
-    recovered: contentConfig.quantities === whole
-      ? selectedCountryInfo.recovered
-      : selectedCountryInfo.recoveredPerOneMillion,
-  };
+  });
+
+  useEffect(() => {
+    getGlobalState();
+    getPerCountryState();
+  }, []);
+
+  console.log(data);
+  useEffect(() => {
+    switch (contentConfig.quantities) {
+      case per100:
+        setData({
+          ...data,
+          globalCases: selectedCountryInfo.casesPerOneMillion,
+          losses: selectedCountryInfo.deathsPerOneMillion,
+          recovered: selectedCountryInfo.recoveredPerOneMillion,
+          countries,
+          countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
+        });
+        break;
+      case lastDay:
+        setData({
+          ...data,
+          globalCases: selectedCountryInfo.todayCases,
+          losses: selectedCountryInfo.todayDeaths,
+          recovered: selectedCountryInfo.todayRecovered,
+          countries,
+          countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
+        });
+        break;
+      case whole: {
+        setData({
+          ...data,
+          globalCases: selectedCountryInfo.cases,
+          losses: selectedCountryInfo.deaths,
+          recovered: selectedCountryInfo.recovered,
+          countries,
+          countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
+        });
+        break;
+      }
+      default: {
+        setData({ ...data });
+        break;
+      }
+    }
+  }, [contentConfig.quantities, state]);
+
+  // const data = {
+  //   globalCases: contentConfig.quantities === whole
+  //     ? selectedCountryInfo.cases
+  //     : selectedCountryInfo.casesPerOneMillion,
+  //   countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
+  //   losses: contentConfig.quantities === whole
+  //     ? selectedCountryInfo.deaths
+  //     : selectedCountryInfo.deathsPerOneMillion,
+  //   countries,
+  //   recovered: contentConfig.quantities === whole
+  //     ? selectedCountryInfo.recovered
+  //     : selectedCountryInfo.recoveredPerOneMillion,
+  // };
 
   return (
     <div className={style.App}>

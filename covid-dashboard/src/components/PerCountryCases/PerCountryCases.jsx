@@ -44,7 +44,6 @@ PerCountryCases.propTypes = {
   unsetCountryToObserve: PropTypes.func.isRequired,
   selectedCountryId: PropTypes.number.isRequired,
   contentConfig: PropTypes.shape({
-    timePeriod: PropTypes.string.isRequired,
     quantities: PropTypes.string.isRequired,
   }).isRequired,
 };

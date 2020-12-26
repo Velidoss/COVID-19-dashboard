@@ -4,9 +4,18 @@
   @include blockStyling();
   width: 100%;
   height: 100%;
+  &__controls{
+    margin: 10px;
+  }
+  &__container{
+    width: 100%;
+    height: 95%;
+    &__main{
+
+    }
+  }
 }
-.countryMarker{
-  background-color: rgba(142, 63, 86, 0.8);
+.countryMarker{margin: 10px;
   border-radius: 50%;
   transition: 0.3s ease-in-out;
   opacity: 0.8;

@@ -4,7 +4,6 @@ import useClickOutside from '../../../customHooks/useClickOutside';
 import menuImg from '../../../assets/svg/bars-solid.svg';
 import GlobalContext from '../../../store/GlobalContext';
 import SelectQuantities from './SelectQuantities/SelectQuantities';
-import SelectTimePeriod from './SelectTimePeriod/SelectTimePeriod';
 
 const Menu = () => {
   const {
@@ -25,10 +24,6 @@ const Menu = () => {
             <div className={style.menu__items}>
               <SelectQuantities
                 selected={state.contentConfig.quantities}
-                setContentConfig={setContentConfig}
-              />
-              <SelectTimePeriod
-                selected={state.contentConfig.timePeriod}
                 setContentConfig={setContentConfig}
               />
             </div>

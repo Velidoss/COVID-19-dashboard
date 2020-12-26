@@ -13,14 +13,13 @@ import GlobalContext from './GlobalContext';
 import contentConstants from '../constants/contentConstants';
 import apiEndpoints from '../constants/apiEndpoints';
 
-const { timePeriod, quantities } = contentConstants;
+const { quantities } = contentConstants;
 const { globalInfoEndpoint, countriesInfoEndpoint } = apiEndpoints;
 
 const GlobalState = ({ children }) => {
   const [state, dispatch] = useReducer(GlobalReducer, {
     global: {},
     contentConfig: {
-      timePeriod: timePeriod.fullPeriod,
       quantities: quantities.whole,
     },
     countries: [],

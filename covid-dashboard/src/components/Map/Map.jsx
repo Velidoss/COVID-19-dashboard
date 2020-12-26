@@ -1,51 +1,51 @@
 import React, { useState } from 'react';
-import ReactMapboxGl, { Popup } from 'react-mapbox-gl';
 import PropTypes from 'prop-types';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import ReactMapGL, { Popup } from 'react-map-gl';
+import { mapBoxToken } from '../../constants/apiEndpoints';
 import MapMarker from './MapMarker/MapMarker';
 import MapCountryInfo from './MapCountryInfo/MapCountryInfo';
-import { mapBoxToken } from '../../constants/apiEndpoints';
 
 const Map = ({ countries }) => {
-  const MapComponent = ReactMapboxGl({
-    accessToken: mapBoxToken,
-  });
   const [selected, toggleSelected] = useState(null);
 
+  const [viewport, setViewport] = useState({
+    width: '100%',
+    height: '100%',
+    latitude: 49,
+    longitude: 32,
+    zoom: 3,
+  });
+  console.log(selected);
   return (
-    <MapComponent
-      // eslint-disable-next-line react/style-prop-object
-      style="mapbox://styles/mapbox/light-v10"
-      containerStyle={{
-        width: '100%',
-        height: '100%',
-        borderRadius: '20px',
-        position: 'relative',
-      }}
-      сenter={[32, 49]}
-      zoom={[3]}
+    <ReactMapGL
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...viewport}
+      mapboxApiAccessToken={mapBoxToken}
+      onViewportChange={(nextViewport) => setViewport(nextViewport)}
     >
       {
         countries.map((country) => (
           <MapMarker
-            select={() => toggleSelected(country)}
             key={country.countryInfo._id}
-            long={country.countryInfo.long}
             lat={country.countryInfo.lat}
             cases={country.cases}
+            long={country.countryInfo.long}
+            select={() => toggleSelected(country)}
           />
         ))
       }
       {
         selected ? (
           <Popup
-            coordinates={[selected.countryInfo.long, selected.countryInfo.lat]}
+            longitude={selected.countryInfo.long}
+            latitude={selected.countryInfo.lat}
             style={{
               zIndex: 20,
             }}
+            onClose={() => toggleSelected(null)}
+            anchor="top"
           >
             <MapCountryInfo
-              close={() => toggleSelected(null)}
               country={selected.country}
               recovered={selected.recovered}
               cases={selected.cases}
@@ -54,7 +54,7 @@ const Map = ({ countries }) => {
           </Popup>
         ) : null
       }
-    </MapComponent>
+    </ReactMapGL>
   );
 };
 

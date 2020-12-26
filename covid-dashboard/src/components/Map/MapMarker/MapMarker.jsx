@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Marker } from 'react-mapbox-gl';
+import { Marker } from 'react-map-gl';
+import style from './MapMarker.module.scss';
 
 const MapMarker = ({
   select, long, lat, cases,
@@ -15,19 +16,19 @@ const MapMarker = ({
   }, []);
 
   return (
-    <div onClick={select}>
-      <Marker
-        coordinates={[long, lat]}
+    <Marker
+      longitude={long}
+      latitude={lat}
+    >
+      <div
+        onClick={select}
+        className={style.countryMarker}
         style={{
           width: `${radius}px`,
           height: `${radius}px`,
-          backgroundColor: '#8e3f56',
-          borderRadius: '50%',
-          opacity: '0.8',
         }}
       />
-    </div>
-
+    </Marker>
   );
 };
 

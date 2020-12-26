@@ -4,12 +4,12 @@ import style from './App.module.scss';
 import Header from './components/Header/Header';
 import GlobalCases from './components/GlobalCases/GlobalCases';
 import PerCountryCases from './components/PerCountryCases/PerCountryCases';
-import Map from './components/Map/Map';
 import GlobalLosses from './components/GlobalLosses/GlobalLosses';
 import Recovered from './components/Recovered/Recovered';
 import Diagram from './components/Diagram/Diagram';
 import contentConstants from './constants/contentConstants';
 import DiagramState from './store/DiagramContext/DiagramState';
+import Map from './components/Map/Map';
 
 function App() {
   const { whole } = contentConstants.quantities;

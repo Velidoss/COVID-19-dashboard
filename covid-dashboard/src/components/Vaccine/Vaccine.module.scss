@@ -4,5 +4,47 @@
   @include blockStyling();
   width: 100%;
   height: calc(91vh - 20px);
+  &__heading{
+    @include fontLight(18px);
+    @include flexCenter(row);
+    margin: 10px 0;
+  }
+}
+.tcontainer{
   position: relative;
+  overflow-y: scroll;
+  height: calc(91vh - 20px - 44px);
+}
+.table{
+  margin: 0 auto;
+  width: 90%;
+  @include fontLight(16px);
+  &__head{
+    &_row{
+      &_col{
+        position: sticky;
+        top: 0;
+        vertical-align: bottom;
+        background: $colorBlock;
+        z-index: 10;
+        border-bottom: 2px solid $colorRecovered;
+        padding: 5px 10px;
+      }
+    }
+  }
+  &__body{
+    &_row{
+      &_col{
+        padding: 5px 10px;
+        border-bottom: 2px solid $colorRecovered;
+        &_button{
+          @include btnStyling(10px);
+          img{
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+
 }

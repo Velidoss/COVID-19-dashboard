@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import style from './Vaccine.module.scss';
 import VaccineContext from '../../store/VaccineContext/VaccineContext';
+import VaccineTr from './VaccineTr/VaccineTr';
 
 function Vaccine() {
   const { state, getVaccineStatistics } = useContext(VaccineContext);
@@ -12,45 +13,42 @@ function Vaccine() {
   console.log(data, phases);
   return (
     <div className={style.vaccine}>
-      <table>
-        <thead>
-          <tr>
-            <th colSpan="6">Vaccines</th>
-          </tr>
-          <tr>
-            <th>Vaccine name</th>
-            <th>Vaccine type</th>
-            <th>Developers</th>
-            <th>Phase</th>
-            <th>Institutions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            data !== undefined
-              ? data.map((vaccine) => (
-                <tr>
-                  <td>
-                    {vaccine.candidate}
-                  </td>
-                  <td>
-                    {vaccine.mechanism}
-                  </td>
-                  <td>
-                    {vaccine.sponsors}
-                  </td>
-                  <td>
-                    {vaccine.trialPhase}
-                  </td>
-                  <td>
-                    {vaccine.institutions}
-                  </td>
-                </tr>
-              ))
-              : null
-          }
-        </tbody>
-      </table>
+      <div className={style.vaccine__heading}>
+        Vaccines statistics
+      </div>
+      <div className={style.tcontainer}>
+        <table className={style.table}>
+          <thead className={style.table__head}>
+            <tr className={style.table__head_row}>
+              {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+              <th className={style.table__head_row_col} />
+              <th className={style.table__head_row_col}>Vaccine name</th>
+              <th className={style.table__head_row_col}>Vaccine type</th>
+              <th className={style.table__head_row_col}>Developers</th>
+              <th className={style.table__head_row_col}>Phase</th>
+              <th className={style.table__head_row_col}>Institutions</th>
+            </tr>
+          </thead>
+          <tbody className={style.table__body}>
+            {
+              data !== undefined
+                ? data.map((vaccine, i) => (
+                  <VaccineTr
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={i}
+                    institutions={vaccine.institutions}
+                    sponsors={vaccine.sponsors}
+                    candidate={vaccine.candidate}
+                    mechanism={vaccine.mechanism}
+                    trialPhase={vaccine.trialPhase}
+                    details={vaccine.details}
+                  />
+                ))
+                : null
+            }
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

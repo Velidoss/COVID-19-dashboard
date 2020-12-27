@@ -1,13 +1,17 @@
 @import "../../../common/common";
 .menu{
   @include flexCustom(row, space-around);
-  &__btn{
-    @include btnStyling(10px);
-    &_img{
-      width: 20px;
-      height: 20px;
+  position: relative;
+  &__open{
+    display: none;
+    &_button{
+      @include btnStyling(10px);
+      &_img{
+        width: 20px;
+        height: 20px;
+      }
+      position: relative;
     }
-    position: relative;
   }
   &__items{
     right: 30px;
@@ -36,6 +40,52 @@
       &__select{
         @include selectElement();
       }
+    }
+  }
+  &__collapse{
+    @include flexCustom(column, space-around);
+    width: 320px;
+    height: 200px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    z-index: 20;
+    background-color: $colorMenu;
+    .menu__items_item{
+      @include flexCustom(row, center, center);
+      @include fontLight(18px);
+      width: 100%;
+      margin-top: 5px;
+      &__select{
+        @include selectElement();
+      }
+    }
+    &_link{
+      @include fontLight(18px);
+      margin-left: 20px;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: 0.4s ease-in-out;
+      &:hover{
+        @include fontLight(18px);
+        cursor: pointer;
+        background: #2FDB74;
+        color: #e4fbff;
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 980px)  {
+  .menu{
+    &__open{
+      display: flex;
+    }
+    &__items{
+      display: none;
     }
   }
 }

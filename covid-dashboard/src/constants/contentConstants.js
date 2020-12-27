@@ -14,6 +14,16 @@ const contentConstants = {
       height: 'calc(100vh - 9vh - 30px)',
     },
   },
+  locations: {
+    main: {
+      to: '/',
+      name: 'Main',
+    },
+    vaccine: {
+      to: '/vaccine',
+      name: 'Vaccine',
+    },
+  },
 };
 
 export default contentConstants;

@@ -1,4 +1,4 @@
-@import "common/common";
+@import './common/common.scss';
 
 body{
   background: $colorBg;
@@ -18,65 +18,4 @@ body{
   width: calc(100% - 40px);
   min-height: 100vh;
   padding: 0 20px;
-}
-
-.mainContainer{
-  @include flexRow();
-  width: 100%;
-  height: calc(91vh - 20px);
-  position: relative;
-  flex-wrap: wrap;
-}
-.appPanelLeft{
-  @include flexCenter(column);
-  width: 20%;
-  height: calc(100% - 20px);
-}
-
-.mapContainer{
-  @include flexCenter(column);
-  width: calc(50% - 80px);
-  margin: 0 40px;
-  height: calc(100% - 20px);
-}
-
-.appPanelRight{
-  @include flexCustom(column, space-around);
-  width: 30%;
-  height: calc(100% - 20px);
-  &__top{
-    @include flexCenter(row);
-    width: 100%;
-    height: calc(50vh - 40px);
-  }
-  &__bot{
-    @include flexCenter(row);
-    width: 100%;
-    height: calc(40vh - 40px);
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .appPanelRight{
-    width: 100%;
-  }
-  .appPanelLeft{
-    flex: 2;
-  }
-  .mapContainer{
-    flex: 4;
-    margin: 0;
-  }
-}
-@media screen and (max-width: 768px) {
-  .appPanelRight{
-    width: 100%;
-  }
-  .appPanelLeft{
-    flex: 2;
-  }
-  .mapContainer{
-    width: 100%;
-    flex: auto;
-  }
 }

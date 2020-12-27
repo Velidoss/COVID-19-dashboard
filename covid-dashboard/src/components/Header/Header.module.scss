@@ -9,6 +9,12 @@
   @include flexCustom(row, space-around, center);
   &Text{
     @include fontLight(26px);
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+    &:hover{
+      cursor: pointer;
+      text-shadow: 1px 0 grey;
+    }
   }
 
   &__credits{

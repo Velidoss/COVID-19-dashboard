@@ -1,0 +1,8 @@
+@import '../../common/common';
+
+.vaccine{
+  @include blockStyling();
+  width: 100%;
+  height: calc(91vh - 20px);
+  position: relative;
+}

@@ -1,12 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import style from './Vaccine.module.scss';
 import VaccineContext from '../../store/VaccineContext/VaccineContext';
 import VaccineTr from './VaccineTr/VaccineTr';
+import DescriptionModal from './VaccineTr/DescriptionModal';
 
 function Vaccine() {
   const { state, getVaccineStatistics } = useContext(VaccineContext);
   const { data, phases } = state.vaccineStats;
-
+  const [description, toggleDescription] = useState(null);
   useEffect(() => {
     getVaccineStatistics();
   }, []);
@@ -16,6 +17,11 @@ function Vaccine() {
       <div className={style.vaccine__heading}>
         Vaccines statistics
       </div>
+      {
+        description
+          ? <DescriptionModal description={description} closeModal={() => toggleDescription('')} />
+          : null
+      }
       <div className={style.tcontainer}>
         <table className={style.table}>
           <thead className={style.table__head}>
@@ -41,7 +47,7 @@ function Vaccine() {
                     candidate={vaccine.candidate}
                     mechanism={vaccine.mechanism}
                     trialPhase={vaccine.trialPhase}
-                    details={vaccine.details}
+                    toggleDescription={() => toggleDescription(vaccine.details)}
                   />
                 ))
                 : null

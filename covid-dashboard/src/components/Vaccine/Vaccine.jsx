@@ -6,12 +6,12 @@ import DescriptionModal from './VaccineTr/DescriptionModal';
 
 function Vaccine() {
   const { state, getVaccineStatistics } = useContext(VaccineContext);
-  const { data, phases } = state.vaccineStats;
+  const { data } = state.vaccineStats;
   const [description, toggleDescription] = useState(null);
   useEffect(() => {
     getVaccineStatistics();
   }, []);
-  console.log(data, phases);
+
   return (
     <div className={style.vaccine}>
       <div className={style.vaccine__heading}>

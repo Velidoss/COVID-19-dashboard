@@ -11,11 +11,12 @@ const Map = ({ countries }) => {
 
   const [viewport, setViewport] = useState({
     width: '100%',
-    height: '95%',
+    height: '100%',
     latitude: 49,
     longitude: 32,
     zoom: 3,
   });
+
   return (
     <div className={style.map}>
       <div className={style.map__controls}>

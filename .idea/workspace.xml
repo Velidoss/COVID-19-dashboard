@@ -20,40 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe05b8fb-940c-47b4-8183-1d7861e54c9a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Diagram/Diagram.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Diagram/Diagram.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/App.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalCases/GlobalCases.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalCases/GlobalCases.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalLosses/CountryWithLosses.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalLosses/CountryWithLosses.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalLosses/GlobalLosses.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalLosses/GlobalLosses.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/Menu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/SelectQuantities/SelectQuantities.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/SelectQuantities/SelectQuantities.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/SelectTimePeriod/SelectTimePeriod.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/SelectTimePeriod/SelectTimePeriod.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Search/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Search/Search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Search/SearchCountry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Search/SearchCountry.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalCases/GlobalCases.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalCases/GlobalCases.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/Map.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapCountryInfo/MapCountryInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapCountryInfo/MapCountryInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapMarker/MapMarker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapMarker/MapMarker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/PerCountryCases/Country.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/PerCountryCases/Country.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/PerCountryCases/PerCountryCases.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/PerCountryCases/PerCountryCases.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Recovered/CountryWithRecovered.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Recovered/CountryWithRecovered.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Recovered/Recovered.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Recovered/Recovered.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/constants/apiEndpoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/constants/apiEndpoints.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/constants/contentConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/constants/contentConstants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/customHooks/useClickOutside.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/customHooks/useClickOutside.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/customHooks/useSelectedCountry.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/customHooks/useSelectedCountry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalState.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/store/GlobalState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/store/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/store/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/Map.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/Map.module.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +43,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -83,6 +56,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1hdLO7ntt7iCzfZGwdQhBf4UbWt" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -92,17 +68,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/covid-dashboard/src/components/MapAlternative" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/covid-dashboard/node_modules/eslint" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\RS-school\velidoss-JS2020Q3\covid-dashboard\src\components\MapAlternative" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\RS-school\velidoss-JS2020Q3\covid-dashboard" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -130,6 +114,7 @@
       <workItem from="1600335989194" duration="41472000" />
       <workItem from="1608761504911" duration="618000" />
       <workItem from="1608786677646" duration="424000" />
+      <workItem from="1608817025316" duration="64196000" />
     </task>
     <servers />
   </component>

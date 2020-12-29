@@ -8,6 +8,8 @@ const SelectQuantities = ({
   setContentConfig,
 }) => {
   const [selectedValue, setSelectedValue] = useState('');
+  const { quantities } = contentConstants.contentConfigTypes;
+  const { showQuantitiesTitle } = contentConstants.titles;
   const { whole, per100, lastDay } = contentConstants.quantities;
 
   useEffect(() => {
@@ -16,11 +18,11 @@ const SelectQuantities = ({
 
   return (
     <div className={style.menu__items_item}>
-      Show quantities:
+      {showQuantitiesTitle}
       <select
         className={style.menu__items_item__select}
         value={selectedValue}
-        onChange={(event) => setContentConfig('quantities', event.target.value)}
+        onChange={(event) => setContentConfig(quantities, event.target.value)}
       >
         <option className={style.menu__items_item__select_option} value={per100}>per 100000</option>
         <option className={style.menu__items_item__select_option} value={whole}>whole</option>

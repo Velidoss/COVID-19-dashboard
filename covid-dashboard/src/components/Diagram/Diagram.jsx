@@ -3,128 +3,85 @@ import { Line } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 import style from './Diagram.module.scss';
 import DiagramContext from '../../store/DiagramContext/DiagramContext';
+import contentConstants from '../../constants/contentConstants';
+import diagramConstants from '../../constants/diagramConstants';
+import createChartData from '../../common/createChartData';
+import SelectPeriod from './SelectPeriod/SelectPeriod';
+import SelectStatType from '../../common/SelectStatType/SelectStatType';
 
 const Diagram = ({ countryName }) => {
   const { state, getDiagramStatistics } = useContext(DiagramContext);
-
+  const { diagramStats } = state;
+  const { cases, deaths, recovered } = contentConstants.statTypes;
+  const {
+    casesChartStyle,
+    deathsChartStyle,
+    recoveredChartStyle,
+  } = diagramConstants.metricTypesStyles;
   const [period, setPeriod] = useState(30);
-  const [statType, setStatType] = useState('cases');
+  const [statType, setStatType] = useState(cases);
   const [fillColor, setFillColor] = useState({
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgba(255, 99, 132, 0.2)',
+    ...casesChartStyle,
   });
-  const [chartData, setChartData] = useState({
-    labels: state.diagramStats[statType] ? Object.keys(state.diagramStats[statType]) : [],
-    datasets: [
-      {
-        label: 'Cases statistics',
-        data: state.diagramStats[statType] ? Object.values(state.diagramStats[statType]) : [],
-        fill: true,
-        backgroundColor: fillColor.backgroundColor,
-        borderColor: fillColor.borderColor,
-      },
-    ],
-  });
+  const [chartData, setChartData] = useState(
+    createChartData({
+      diagramStats, statType, countryName, fillColor,
+    }),
+  );
 
   useEffect(() => {
     getDiagramStatistics(countryName, period);
-    setChartData({
-      labels: state.diagramStats[statType] ? Object.keys(state.diagramStats[statType]) : [],
-      datasets: [
-        {
-          label: `Number of ${statType}${countryName ? ` in ${countryName}` : ''}`,
-          data: state.diagramStats[statType] ? Object.values(state.diagramStats[statType]) : [],
-          fill: true,
-          backgroundColor: fillColor.backgroundColor,
-          borderColor: fillColor.borderColor,
-        },
-      ],
-    });
+    setChartData(createChartData({
+      diagramStats, statType, countryName, fillColor,
+    }));
   }, [countryName, period, statType, fillColor]);
 
   useEffect(() => {
-    setChartData({
-      labels: state.diagramStats[statType] ? Object.keys(state.diagramStats[statType]) : [],
-      datasets: [
-        {
-          label: `Number of ${statType}${countryName ? ` in ${countryName}` : ''}`,
-          data: state.diagramStats[statType] ? Object.values(state.diagramStats[statType]) : [],
-          fill: true,
-          backgroundColor: fillColor.backgroundColor,
-          borderColor: fillColor.borderColor,
-        },
-      ],
-    });
+    setChartData(createChartData({
+      diagramStats, statType, countryName, fillColor,
+    }));
   }, [state]);
 
   useEffect(() => {
     switch (statType) {
-      case 'deaths': {
+      case deaths: {
         setFillColor({
-          backgroundColor: 'rgb(39,39,43)',
-          borderColor: 'rgba(255,204,233,0.2)',
+          ...deathsChartStyle,
         });
         break;
       }
-      case 'recovered': {
+      case recovered: {
         setFillColor({
-          backgroundColor: 'rgb(25,81,32)',
-          borderColor: 'rgb(9,66,20)',
+          ...recoveredChartStyle,
         });
         break;
       }
       default: {
         setFillColor({
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgba(255, 99, 132, 0.2)',
+          ...casesChartStyle,
         });
       }
     }
 
-    setChartData({
-      labels: state.diagramStats[statType] ? Object.keys(state.diagramStats[statType]) : [],
-      datasets: [
-        {
-          label: `Number of ${statType}${countryName ? ` in ${countryName}` : ''}`,
-          data: state.diagramStats[statType] ? Object.values(state.diagramStats[statType]) : [],
-          fill: true,
-          backgroundColor: fillColor.backgroundColor,
-          borderColor: fillColor.borderColor,
-        },
-      ],
-    });
+    setChartData(createChartData({
+      diagramStats, statType, countryName, fillColor,
+    }));
   }, [statType]);
 
   return (
     <div className={style.diagramContainer}>
       <div className={style.diagramContainer__controls}>
         <div className={style.diagramContainer__controls__item}>
-          <select
-            value={period}
-            onChange={(event) => setPeriod(event.target.value)}
-            className={style.diagramContainer__controls__item_select}
-          >
-            <option value="30">30 days</option>
-            <option value="60">60 days</option>
-            <option value="120">120 days</option>
-            <option value="150">150 days</option>
-            <option value="180">180 days</option>
-            <option value="210">210 days</option>
-            <option value="240">240 days</option>
-            <option value="270">270 days</option>
-            <option value="300">300 days</option>
-          </select>
+          <SelectPeriod
+            setPeriod={(event) => setPeriod(event.target.value)}
+            period={period}
+          />
         </div>
         <div className={style.diagramContainer__controls__item}>
-          <select
-            value={statType}
-            onChange={(event) => setStatType(event.target.value)}
-            className={style.diagramContainer__controls__item_select}
-          >
-            <option value="cases">cases</option>
-            <option value="deaths">deaths</option>
-            <option value="recovered">recovered</option>
-          </select>
+          <SelectStatType
+            toggleStatType={(event) => setStatType(event.target.value)}
+            currentStatType={statType}
+          />
         </div>
       </div>
       <div className={style.diagramContainer__graph}>

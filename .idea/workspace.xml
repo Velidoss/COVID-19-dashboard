@@ -1,31 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe05b8fb-940c-47b4-8183-1d7861e54c9a" name="Default Changelist" comment="">
+    <list default="true" id="529a195d-562e-4cec-96d2-25097c1ba6e4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/App.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalCases/GlobalCases.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalCases/GlobalCases.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalCases/GlobalCases.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/GlobalCases/GlobalCases.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/2.3a49cdd1.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/2.3a49cdd1.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.da4a3a07.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.da4a3a07.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.2dc8a2b9.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.2dc8a2b9.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.2dc8a2b9.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.34020064.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.34020064.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.f2c2bcaa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.f2c2bcaa.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/bars-solid.e8db7520.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/expandSvg.cc9c15ed.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/searchSvg.8a17900c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/times-solid.b00507d1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/.env.local" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/.env.local" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Diagram/Diagram.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Diagram/Diagram.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/SelectQuantities/SelectQuantities.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Header/Menu/SelectQuantities/SelectQuantities.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/Map.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/Map.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/Map.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapCountryInfo/MapCountryInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapCountryInfo/MapCountryInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapCountryInfo/MapCountryInfo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/components/Map/MapCountryInfo/MapCountryInfo.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covid-dashboard/src/constants/contentConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/covid-dashboard/src/constants/contentConstants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,35 +51,36 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="React jsx" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="gh-pages" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1hdLO7ntt7iCzfZGwdQhBf4UbWt" />
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\RS-school\velidoss-JS2020Q3\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1mJzLUg7wH9RCyD7stAjycpGlR0" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSX Harmony" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/covid-dashboard/src/components/MapAlternative" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/covid-dashboard/node_modules/eslint" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -77,15 +88,12 @@
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/covid-dashboard/node_modules/eslint" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Velidoss\AppData\Roaming\npm\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\RS-school\velidoss-JS2020Q3\covid-dashboard\src\components\MapAlternative" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\RS-school\velidoss-JS2020Q3\covid-dashboard" />
+      <recent name="D:\RS-school\velidoss-JS2020Q3\covid-dashboard\src\common" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -100,21 +108,17 @@
       </list>
     </option>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fe05b8fb-940c-47b4-8183-1d7861e54c9a" name="Default Changelist" comment="" />
-      <created>1600335988125</created>
+      <changelist id="529a195d-562e-4cec-96d2-25097c1ba6e4" name="Default Changelist" comment="" />
+      <created>1609226425844</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1600335988125</updated>
-      <workItem from="1600335989194" duration="41472000" />
-      <workItem from="1608761504911" duration="618000" />
-      <workItem from="1608786677646" duration="424000" />
-      <workItem from="1608817025316" duration="64196000" />
+      <updated>1609226425844</updated>
+      <workItem from="1609226427826" duration="15575000" />
     </task>
     <servers />
   </component>
@@ -126,26 +130,10 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="686" y="215" key="FileChooserDialogImpl" timestamp="1600448807264">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="686" y="215" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600448807264" />
-    <state x="183" y="85" key="MergeDialog" timestamp="1600884297208">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="183" y="85" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600884297208" />
-    <state x="706" y="60" key="git4idea.branch.GitSmartOperationDialog" timestamp="1600884293955">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="706" y="60" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600884293955" />
   </component>
 </project>

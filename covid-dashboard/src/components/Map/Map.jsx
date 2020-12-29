@@ -1,35 +1,43 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import ReactMapGL, { Popup } from 'react-map-gl';
+import ReactMapGL from 'react-map-gl';
 import MapMarker from './MapMarker/MapMarker';
-import MapCountryInfo from './MapCountryInfo/MapCountryInfo';
 import style from './Map.module.scss';
+import mapConstants from '../../constants/mapConstants';
+import contentConstants from '../../constants/contentConstants';
+import SelectStatType from '../../common/SelectStatType/SelectStatType';
+import MapPopup from './MapPopup/MapPopup';
 
 const Map = ({ countries }) => {
-  const [selected, toggleSelected] = useState(null);
-  const [statType, toggleStatType] = useState('cases');
+  const { viewPortInitialSettings } = mapConstants;
+  const { statTypes } = contentConstants;
+  const {
+    viewPortWidth,
+    viewPortHeight,
+    viewPortLatitude,
+    viewPortLongitude,
+    viewPortZoom,
+  } = viewPortInitialSettings;
+  const { cases } = statTypes;
+
+  const [selectedCountryForPopup, toggleSelectedCountryForPopup] = useState(null);
+  const [statType, toggleStatType] = useState(cases);
 
   const [viewport, setViewport] = useState({
-    width: '100%',
-    height: '100%',
-    latitude: 49,
-    longitude: 32,
-    zoom: 3,
+    width: viewPortWidth,
+    height: viewPortHeight,
+    latitude: viewPortLatitude,
+    longitude: viewPortLongitude,
+    zoom: viewPortZoom,
   });
 
   return (
     <div className={style.map}>
       <div className={style.map__controls}>
-        Stats type:
-        <select
-          value={statType}
-          onChange={(event) => toggleStatType(event.target.value)}
-          className={style.controls__select}
-        >
-          <option className={style.controls__select_option} value="cases">cases</option>
-          <option className={style.controls__select_option} value="deaths">deaths</option>
-          <option className={style.controls__select_option} value="recovered">recovered</option>
-        </select>
+        <SelectStatType
+          currentStatType={statType}
+          toggleStatType={(event) => toggleStatType(event.target.value)}
+        />
       </div>
       <div className={style.map__container}>
         <ReactMapGL
@@ -39,35 +47,27 @@ const Map = ({ countries }) => {
           onViewportChange={(nextViewport) => setViewport(nextViewport)}
         >
           {
-            countries.map((country) => (
-              <MapMarker
-                key={country.countryInfo._id}
-                lat={country.countryInfo.lat}
-                displayInfo={country[statType]}
-                long={country.countryInfo.long}
-                statType={statType}
-                select={() => toggleSelected(country)}
-              />
-            ))
+            countries.map((item) => {
+              const { _id, lat, long } = item.countryInfo;
+              return (
+                <MapMarker
+                  key={_id}
+                  lat={lat}
+                  displayInfo={item[statType]}
+                  long={long}
+                  statType={statType}
+                  select={() => toggleSelectedCountryForPopup(item)}
+                />
+              );
+            })
           }
           {
-            selected ? (
-              <Popup
-                longitude={selected.countryInfo.long}
-                latitude={selected.countryInfo.lat}
-                style={{
-                  zIndex: 20,
-                }}
-                onClose={() => toggleSelected(null)}
-                anchor="top"
-              >
-                <MapCountryInfo
-                  country={selected.country}
-                  statType={statType}
-                  displayInfo={selected[statType]}
-                  countryFlag={selected.countryInfo.flag}
-                />
-              </Popup>
+            selectedCountryForPopup ? (
+              <MapPopup
+                selectedCountryForPopup={selectedCountryForPopup}
+                statType={statType}
+                toggleSelectedCountryForPopup={() => toggleSelectedCountryForPopup(null)}
+              />
             ) : null
           }
         </ReactMapGL>

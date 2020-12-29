@@ -1,4 +1,12 @@
 const contentConstants = {
+  contentConfigTypes: {
+    quantities: 'quantities',
+  },
+  statTypes: {
+    cases: 'cases',
+    deaths: 'deaths',
+    recovered: 'recovered',
+  },
   quantities: {
     whole: 'whole',
     per100: 'per100',
@@ -23,6 +31,15 @@ const contentConstants = {
       to: '/vaccine',
       name: 'Vaccine',
     },
+  },
+  credentials: {
+    author: 'https://github.com/Velidoss',
+    school: 'https://rs.school/js/',
+  },
+  titles: {
+    projectTitle: 'Covid dashboard',
+    statsTypeTitle: 'Stats type: ',
+    showQuantitiesTitle: 'Show quantities: ',
   },
 };
 

@@ -13,7 +13,7 @@ const SelectPeriod = ({ period, setPeriod }) => {
     >
       {
         selectPeriodValues.map((item) => (
-          <option value={item.value}>{item.text}</option>
+          <option key={item.value} value={item.value}>{item.text}</option>
         ))
       }
     </select>
@@ -21,7 +21,7 @@ const SelectPeriod = ({ period, setPeriod }) => {
 };
 
 SelectPeriod.propTypes = {
-  period: PropTypes.string.isRequired,
+  period: PropTypes.number.isRequired,
   setPeriod: PropTypes.func.isRequired,
 };
 

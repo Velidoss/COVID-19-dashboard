@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import GlobalContext from '../../store/GlobalContext';
 import style from './Main.module.scss';
 import GlobalCases from '../GlobalCases/GlobalCases';
@@ -6,12 +6,11 @@ import PerCountryCases from '../PerCountryCases/PerCountryCases';
 import GlobalLosses from '../GlobalLosses/GlobalLosses';
 import Recovered from '../Recovered/Recovered';
 import Diagram from '../Diagram/Diagram';
-import contentConstants from '../../constants/contentConstants';
 import DiagramState from '../../store/DiagramContext/DiagramState';
 import Map from '../Map/Map';
+import useSetDataByTheConfig from '../../customHooks/useSetDataByTheConfig';
 
 function Main() {
-  const { whole, per100, lastDay } = contentConstants.quantities;
   const {
     state,
     getGlobalState,
@@ -26,59 +25,14 @@ function Main() {
     selectedCountryInfo,
   } = state;
 
-  const [data, setData] = useState({
-    countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
-    countryFlag: selectedCountryInfo.countryInfo ? selectedCountryInfo.countryInfo.flag : '',
-    countries,
-  });
-
   useEffect(() => {
     getGlobalState();
     getPerCountryState();
   }, []);
 
-  useEffect(() => {
-    switch (contentConfig.quantities) {
-      case per100:
-        setData({
-          ...data,
-          globalCases: selectedCountryInfo.casesPerOneMillion,
-          losses: selectedCountryInfo.deathsPerOneMillion,
-          recovered: selectedCountryInfo.recoveredPerOneMillion,
-          countries,
-          countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
-          countryFlag: selectedCountryInfo.countryInfo ? selectedCountryInfo.countryInfo.flag : '',
-        });
-        break;
-      case lastDay:
-        setData({
-          ...data,
-          globalCases: selectedCountryInfo.todayCases,
-          losses: selectedCountryInfo.todayDeaths,
-          recovered: selectedCountryInfo.todayRecovered,
-          countries,
-          countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
-          countryFlag: selectedCountryInfo.countryInfo ? selectedCountryInfo.countryInfo.flag : '',
-        });
-        break;
-      case whole: {
-        setData({
-          ...data,
-          globalCases: selectedCountryInfo.cases,
-          losses: selectedCountryInfo.deaths,
-          recovered: selectedCountryInfo.recovered,
-          countries,
-          countryName: selectedCountryInfo.country ? selectedCountryInfo.country : '',
-          countryFlag: selectedCountryInfo.countryInfo ? selectedCountryInfo.countryInfo.flag : '',
-        });
-        break;
-      }
-      default: {
-        setData({ ...data });
-        break;
-      }
-    }
-  }, [contentConfig.quantities, state]);
+  const data = useSetDataByTheConfig({
+    selectedCountryInfo, countries, contentConfig, state,
+  });
 
   return (
     <main className={style.mainContainer}>
